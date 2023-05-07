@@ -17,12 +17,18 @@
   </head>
 
   <body>
+    <!-- *<div>Portal</div> Learn more about portal create custom modal-->
     <div id="root">Not Rendered</div>
     <script>
       const heading = React.createElement(
         "h1",
         { id: "content", className: "heading" },
-        "Namaste React"
+        "Welcome",
+        React.createElement(
+          "h4",
+          { id: "content", className: "heading" },
+          "Namaste React"
+        )
       );
       //   console.log(heading);
       // * Heading is not a html tag it is a plain javascript Object in react
