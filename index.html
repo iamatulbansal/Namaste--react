@@ -19,23 +19,36 @@
   <body>
     <!-- *<div>Portal</div> Learn more about portal create custom modal-->
     <div id="root">Not Rendered</div>
+    <!-- <div>
+      <h1>Heading1</h1>
+      <h1>Heading2</h1>
+    </div> -->
     <script>
-      const heading = React.createElement(
+      const heading1 = React.createElement(
         "h1",
-        { id: "content", className: "heading" },
-        "Welcome",
-        React.createElement(
-          "h4",
-          { id: "content", className: "heading" },
-          "Namaste React"
-        )
+        { id: "content1", className: "heading" },
+        "Heading1"
+      );
+      const heading2 = React.createElement(
+        "h1",
+        { id: "content2", className: "heading" },
+        "Heading2"
+      );
+
+      const container = React.createElement(
+        "div",
+        {
+          id: "container",
+          className: "container",
+        },
+        [heading1, heading2] //wrap all heading inside a container div pass all element inside container tag
       );
       //   console.log(heading);
       // * Heading is not a html tag it is a plain javascript Object in react
       const root = ReactDOM.createRoot(document.getElementById("root"));
       //   console.log(root);
       // * Passing a react element inside the root
-      root.render(heading);
+      root.render(container);
     </script>
   </body>
 </html>
