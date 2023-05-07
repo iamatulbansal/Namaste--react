@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namaste-react</title>
+    <!-- *CSS -->
+    <link rel="stylesheet" href="./style.css" />
+
     <!-- *CDN LINK -->
     <script
       crossorigin
@@ -23,32 +26,6 @@
       <h1>Heading1</h1>
       <h1>Heading2</h1>
     </div> -->
-    <script>
-      const heading1 = React.createElement(
-        "h1",
-        { id: "content1", className: "heading" },
-        "Heading1"
-      );
-      const heading2 = React.createElement(
-        "h1",
-        { id: "content2", className: "heading" },
-        "Heading2"
-      );
-
-      const container = React.createElement(
-        "div",
-        {
-          id: "container",
-          className: "container",
-        },
-        [heading1, heading2] //wrap all heading inside a container div pass all element inside container tag
-      );
-      //   console.log(heading);
-      // * Heading is not a html tag it is a plain javascript Object in react
-      const root = ReactDOM.createRoot(document.getElementById("root"));
-      //   console.log(root);
-      // * Passing a react element inside the root
-      root.render(container);
-    </script>
+    <script src="./App.js"></script>
   </body>
 </html>
