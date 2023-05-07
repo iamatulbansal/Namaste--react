@@ -5,16 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Namaste-react</title>
+    <!-- *CDN LINK -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
   </head>
 
   <body>
-    <div id="root"></div>
-    <!-- * We can append Heading inside our root element using javascript  like this let move to the React CDN-->
-    <!-- <script>
-      const heading = document.createElement("h1");
-      heading.innerHTML = "Namaste React live";
-      const root = document.getElementById("root");
-      root.appendChild(heading);
-    </script> -->
+    <div id="root">Not Rendered</div>
+    <script>
+      const heading = React.createElement(
+        "h1",
+        { id: "content", className: "heading" },
+        "Namaste React"
+      );
+      //   console.log(heading);
+      // * Heading is not a html tag it is a plain javascript Object in react
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      //   console.log(root);
+      // * Passing a react element inside the root
+      root.render(heading);
+    </script>
   </body>
 </html>
