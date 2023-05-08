@@ -1,1 +1,1 @@
-# multi-project
+# Namaste-React-project
