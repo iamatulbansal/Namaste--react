@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import restaurantList from './restaurant-list.json';
 
 const Title = () => {
     return (
@@ -31,12 +32,14 @@ const Header = () => {
 
 //WE ARE GOING TO CREATE RESTAURANT CARD
 //WE ARE GOING TO GET PREPARE/CREATE RESTAURANT CARD DATA 
+console.log(restaurantList[0].data)
+
 const burgerKing = {
     image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/uvzfjwcslztz1tzjlzfg",
     name: "Burger King",
     cuisines: ["Burgers", "American"],
     eta: "37",
-    rating: "3.4",
+    avgRating: "3.4",
     price: "200"
 
 
@@ -45,11 +48,11 @@ const RestaurantCard = () => {
     return (
         <div className="restaurant-card">
             <img src={burgerKing.image} alt="Restaurant-card-img" />
-            <strong>{burgerKing.name}</strong>
-            <p>{burgerKing.cuisines.join(",")}</p>
-            <p><b>{burgerKing.rating}</b> STAR</p>
-            <p><b>{burgerKing.eta}</b> MINS</p>
-            <p><b>{burgerKing.price}</b> FOR TWO</p>
+            <strong>{restaurantList[0].data.name}</strong>
+            <p>{restaurantList[0].data.cuisines.slice(0, 3).join(" | ")}</p>
+            <p><b>{restaurantList[0].data.avgRating}</b>⭐</p>
+            <p><b>{restaurantList[0].data.lastMileTravelString}</b></p>
+            <p><b>{restaurantList[0].data.costForTwoString}</b></p>
         </div>
     )
 }
