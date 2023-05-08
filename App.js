@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import restaurantList from './restaurant-list.json';
+import restaurantList from "./restaurant-list.json";
 
 const Title = () => {
     return (
@@ -31,47 +31,30 @@ const Header = () => {
 };
 
 //WE ARE GOING TO CREATE RESTAURANT CARD
-//WE ARE GOING TO GET PREPARE/CREATE RESTAURANT CARD DATA 
-console.log(restaurantList[0].data)
+//WE ARE GOING TO GET PREPARE/CREATE RESTAURANT CARD DATA
 
-const burgerKing = {
-    image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/uvzfjwcslztz1tzjlzfg",
-    name: "Burger King",
-    cuisines: ["Burgers", "American"],
-    eta: "37",
-    avgRating: "3.4",
-    price: "200"
+const RestaurantCard = (props) => {
 
-
-}
-const RestaurantCard = ({ restaurant }) => {
+    const { name, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId, } = props;
     return (
-        <div className="restaurant-card">
-            <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + restaurant.data.cloudinaryImageId} alt="Restaurant-card-img" />
-            <strong>{restaurant.data.name}</strong>
-            <p>{restaurant.data.cuisines.slice(0, 3).join(" | ")}</p>
-            <p><b>{restaurant.data.avgRating}</b>⭐</p>
-            <p><b>{restaurant.data.lastMileTravelString}</b></p>
-            <p><b>{restaurant.data.costForTwoString}</b></p>
+        <div className='restaurant-card' >
+            <img src={"https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}
+                alt='Restaurant-card-img' />
+            <strong>{name}</strong>
+            <p>{cuisines?.slice(0, 3).join(" | ")}</p>
+            <p><b>{avgRating}</b>⭐</p>
+            <p><b>{lastMileTravelString}</b></p>
+            <p><b>{costForTwoString}</b></p>
         </div>
-    )
-}
-
+    );
+};
 
 const Body = () => {
     return (
-        <div className="body-container">
-            <RestaurantCard restaurant={restaurantList[0]} />
-            <RestaurantCard restaurant={restaurantList[1]} />
-            <RestaurantCard restaurant={restaurantList[2]} />
-            <RestaurantCard restaurant={restaurantList[3]} />
-            <RestaurantCard restaurant={restaurantList[4]} />
-            <RestaurantCard restaurant={restaurantList[5]} />
-            <RestaurantCard restaurant={restaurantList[6]} />
-            <RestaurantCard restaurant={restaurantList[7]} />
-            <RestaurantCard restaurant={restaurantList[8]} />
-
-
+        <div className='body-container'>
+            {restaurantList.map((restaurant) => {
+                return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
+            })}
         </div>
     );
 };
