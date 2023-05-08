@@ -11,11 +11,9 @@ const HeadingComponent = () => {//This is a react components we can use like thi
     </div>)
 }
 const root = ReactDOM.createRoot(document.getElementById("root"));
-const portal = ReactDOM.createRoot(document.getElementById("portal"));
 // PASSING REACT ELEMENT INSIDE YOUR ROOT 
 root.render(heading); //*This is React element we can use like this (heading)
-portal.render(<HeadingComponent />);//*This is a react components we can use like this <HeadingComponent/>
-// * We can use portal along with root 
+root.render(<HeadingComponent />);//*This is a react components we can use like this <HeadingComponent/> 
 
 /* 
 What is react element - 

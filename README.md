@@ -1,4 +1,4 @@
-<!-- # Namaste-React-project
+ # Namaste-React-project
 /***
  * *PARCEL-BUNDLER
  * CREATE-LIVE-SERVER
@@ -47,4 +47,4 @@
 *functional - i Will use this most of the time
 *Class Based Components -OLD
  */
- */ -->
+ */ 
