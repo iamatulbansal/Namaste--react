@@ -38,13 +38,13 @@
  * CREATING BIG HTML STRUCTURE LIKE THIS BUT THIS IS NOT Relevant TO BIG APPLICATION SO WE MOVE TO WRITE YOUR CODE WITH HELP OF JSX
 
 
- *Components always write your Components using PascalCase
+ * Components always write your Components using PascalCase
 
-*In React(Native/JS) world you must name your component in PascalCase, PascalCase is a naming convention in which the first letter of each word in a compound word is capitalized. Software developers often use PascalCase when writing source code to name functions, classes, and other objects. PascalCase is similar to camelCase, except the first letter in PascalCase is always Capitalized.js
+* In React(Native/JS) world you must name your component in PascalCase, PascalCase is a naming convention in which the first letter of each word in a compound word is capitalized. Software developers often use PascalCase when writing source code to name functions, classes, and other objects. PascalCase is similar to camelCase, except the first letter in PascalCase is always Capitalized.js
 
 
-*React 2 Type of Components
-*functional - i Will use this most of the time
-*Class Based Components -OLD
+* React 2 Type of Components
+* functional - i Will use this most of the time
+* Class Based Components -OLD
  */
  */ 
