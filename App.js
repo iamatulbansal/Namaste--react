@@ -1,4 +1,3 @@
-
 /***
  * *PARCEL-BUNDLER
  * CREATE-LIVE-SERVER
@@ -29,34 +28,64 @@
  *  2.8.2 NOT ANY SING THEN YOUR PROJECT WORKING ONLY SPECIFIC VERSION
  * PUSH YOUR PACKAGE-LOCK.JSON FILE TO YOUR GIT REPO SO WHEN WE DEPLOY YOUR APP THEN SERVER KNOW HWT VERSION DO YOU USE IN YOUR PROJECT DON'T DELETE YOUR PACKAGE-LOCK.JSON
  *
+ *
+ * *OTHER IMPORTANT NOTE
+ * READ ABOUT REACT RECONCILIATION
+ * READ ABOUT The Diffing Algorithm
+ * how it works in react>>>>React.createElement => Object =>HTML(DOM)
  */
 import React from "react";
 import ReactDOM from "react-dom/client";
+/***
+ * * Create html like structure using React.createElement
+ * <div>
+      <h1>Heading1</h1>
+      <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 2</li>
+      </ul>
+    </div>
+ *  */
 
-const heading1 = React.createElement(
-    "h1",
-    { id: "content1", className: "heading", key: "h1" },
-    "Heading1"
-);
-const heading2 = React.createElement(
-    "h2",
-    { id: "content2", className: "heading", key: "h2" },
-    "Heading2"
-);
-// *this is take three argument first is html tag second is props=attribute and third is children element
 const container = React.createElement(
     "div",
     {
         id: "container",
         className: "container",
-        key: "div",//We will Pass Kay inside props object like this
+        key: "div",
     },
-    [heading1, heading2]
-    //*wrap all heading inside a container div pass all element inside container tag
+    [
+        React.createElement(
+            "h1",
+            { id: "h1", className: "heading", key: "h1" },
+            "Heading1"
+        ),
+        React.createElement(
+            "ul",
+            { id: "ul", className: "orders-list", key: "ul" },
+            [
+                React.createElement(
+                    "li",
+                    { id: "li1", className: "list-item", key: "li1" },
+                    "task 1"
+                ),
+                React.createElement(
+                    "li",
+                    { id: "li2", className: "list-item", key: "li2" },
+                    "task 2"
+                ),
+                React.createElement(
+                    "li",
+                    { id: "li3", className: "list-item", key: "li3" },
+                    "task 3"
+                ),
+            ]
+        ),
+    ]
 );
 console.log(container);
-// * Heading is not a html tag it is a plain javascript Object in react
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-//   console.log(root);
-// * Passing a react element inside the root
+
 root.render(container);
