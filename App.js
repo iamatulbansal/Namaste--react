@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const Title = () => <h1 className='container'>Heading</h1>;
-
+//*WHEN WE PUT ONE COMPONENT INSIDE ANOTHER COMPONENT , WE CALL IT COMPONENT COMPOSITION.
 const HeadingComponent = () => {
     return (
         <div>
