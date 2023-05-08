@@ -1,21 +1,61 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const Title = () => <h1 className='container'>Heading</h1>;
-
-const HeadingComponent = () => {
-    return (
-        <div>
-            <Title />
-
-            <h1>Namaste React Functional components</h1>
-            <h2>This is a Heading 2</h2>
-        </div>
-    );
+const Title = () => {
+  return (
+    <React.Fragment>
+      <a href='/' className='titleAnchorTag'>
+        <img
+          alt='LOGO'
+          className='logo'
+          src='https://obs.line-scdn.net/0m0339dd5b72513e8a8d6127b836e5ecf1e128f1da5cb7'
+        />
+      </a>
+    </React.Fragment>
+  );
 };
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<HeadingComponent />);
 
+const Header = () => {
+  return (
+    <div className='container'>
+      <Title />
+      <ul className='nav-items'>
+        <li className='nav-list'>Home</li>
+        <li className='nav-list'>About</li>
+        <li className='nav-list'>Cart</li>
+        <li className='nav-list'>Logout</li>
+      </ul>
+    </div>
+  );
+};
+
+const Body = () => {
+  return (
+    <React.Fragment>
+      <h2>Body</h2>
+    </React.Fragment>
+  );
+};
+const Footer = () => {
+  return (
+    <React.Fragment>
+      <h2>Footer</h2>
+    </React.Fragment>
+  );
+};
+
+const AppLayout = () => {
+  return (
+    <React.Fragment>
+      <Header />
+      <Body />
+      <Footer />
+    </React.Fragment>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<AppLayout />);
 
 /**
  * *Day-4-classes
@@ -25,26 +65,23 @@ root.render(<HeadingComponent />);
  *       - logo
  *       - nav items(right side)
  *       - cart (right side)
- * Body-  
+ * Body-
  *      -search-bar
  *      -RestaurantList
- *       -RestaurantCard 
- *        -image  
- *        -name  
- *        -rating  
- *        -cuisines  
- * 
+ *       -RestaurantCard
+ *        -image
+ *        -name
+ *        -rating
+ *        -cuisines
+ *
  * Footer-
  *        -Link
- *        -Copyright  
- * 
- * 
- * 
+ *        -Copyright
+ *
+ *
+ *
  * *when we use multi element inside our components then must be wrap up inside single element JSX expressions must have one parent element
- * 
+ *
  * *React.Fragment is a Component come from React core library or come from react node_modules
- * 
- * 
- * 
- *  
+ *
  * */

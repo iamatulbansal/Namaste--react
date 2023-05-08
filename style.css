@@ -1,4 +1,28 @@
-
 .container {
   background-color: aquamarine;
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 20%;
+  list-style-type: disclosure-closed;
+}
+.nav-list {
+  cursor: pointer;
+}
+.titleAnchorTag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo {
+  width: 100px;
+  border: 1px solid;
+  border-radius: 20px;
 }
