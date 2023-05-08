@@ -54,8 +54,8 @@ const Body = () => {
         <div className='body-container'>
             {restaurantList.map((restaurant) => {
                 const { name, id, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId } = restaurant.data;
-                //* NOTE NOT SENDING ALL DATA TO OTHER COMPONENTS ONLY SEND THE USABLE DATA MAKE YOUR COMPONENTS LITHER SO YOUR APP IS WORKING FASTER
-                return <RestaurantCard {...{ name, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId }} key={id} />;
+                //* NOTE NOT SENDING ALL DATA TO OTHER COMPONENTS ONLY SEND THE USABLE DATA MAKE YOUR COMPONENTS LIGHTER SO YOUR APP IS WORKING FASTER
+                return <RestaurantCard {...{ name,id, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId }} key={id} />;
             })}
         </div>
     );
@@ -114,5 +114,9 @@ root.render(<AppLayout />);
  *
  *
  * *Props  is a Properties
+ * *VIRTUAL DOM
+ * *RECONCILIATION ALGORITHM 
+ * *REACT.FIBER-LEARN MORE THIS IS A NEW ALGORITHMS IN REACT >16 TO RECONCILIATION FASTER
+ * *ALWAYS USE UNIQUE KEY IN OUR ELEMENT NOT USING INDEXES AS A KEY
  *
  * */
