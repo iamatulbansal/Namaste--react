@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import restaurantList from "./restaurant-list.json";
+import restaurantList from "./db/restaurant-list.json";
 
 const Title = () => {
     return (
@@ -55,7 +55,7 @@ const Body = () => {
             {restaurantList.map((restaurant) => {
                 const { name, id, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId } = restaurant.data;
                 //* NOTE NOT SENDING ALL DATA TO OTHER COMPONENTS ONLY SEND THE USABLE DATA MAKE YOUR COMPONENTS LIGHTER SO YOUR APP IS WORKING FASTER
-                return <RestaurantCard {...{ name,id, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId }} key={id} />;
+                return <RestaurantCard {...{ name, id, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId }} key={id} />;
             })}
         </div>
     );
@@ -108,7 +108,7 @@ root.render(<AppLayout />);
  *
  * *React.Fragment is a Component come from React core library or come from react node_modules
  *
- * Todo:Config Driven UI
+ * Todo:---->Config Driven UI
  * *Dynamic UI
  * *Control UI using Data.config.json file
  *
