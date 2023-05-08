@@ -32,12 +32,14 @@
  * *OTHER IMPORTANT NOTE
  * READ ABOUT REACT RECONCILIATION
  * READ ABOUT The Diffing Algorithm
- * how it works in react>>>>React.createElement => Object =>HTML(DOM)
+ * HOW IT WORKS IN REACT>>>>React.createElement => Object =>HTML(DOM)
+ *
+ * CREATING BIG HTML STRUCTURE LIKE THIS BUT THIS IS NOT Relevant TO BIG APPLICATION SO WE MOVE TO WRITE YOUR CODE WITH HELP OF JSX
  */
 import React from "react";
 import ReactDOM from "react-dom/client";
 /***
- * * Create html like structure using React.createElement
+ * * CREATE HTML LIKE STRUCTURE USING React.createElement
  * <div>
       <h1>Heading1</h1>
       <ul>
