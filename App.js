@@ -49,7 +49,7 @@ import ReactDOM from "react-dom/client";
       </ul>
     </div>
  *  */
-
+//REACT ELEMENT
 const container = React.createElement(
     "div",
     {
@@ -57,37 +57,12 @@ const container = React.createElement(
         className: "container",
         key: "div",
     },
-    [
-        React.createElement(
-            "h1",
-            { id: "h1", className: "heading", key: "h1" },
-            "Heading1"
-        ),
-        React.createElement(
-            "ul",
-            { id: "ul", className: "orders-list", key: "ul" },
-            [
-                React.createElement(
-                    "li",
-                    { id: "li1", className: "list-item", key: "li1" },
-                    "task 1"
-                ),
-                React.createElement(
-                    "li",
-                    { id: "li2", className: "list-item", key: "li2" },
-                    "task 2"
-                ),
-                React.createElement(
-                    "li",
-                    { id: "li3", className: "list-item", key: "li3" },
-                    "task 3"
-                ),
-            ]
-        ),
-    ]
+    "Namaste react"
 );
-console.log(container);
+//JSX javascript XML
+const heading = <h1 className="container">Heading</h1>
+console.log(heading);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(container);
+root.render(heading);
