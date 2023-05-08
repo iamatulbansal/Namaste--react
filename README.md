@@ -71,7 +71,7 @@ ans-Object
 What is react components -
 ans-function
 
-
+*WHEN WE PUT ONE COMPONENT INSIDE ANOTHER COMPONENT , WE CALL IT COMPONENT COMPOSITION.
  */ 
 
  

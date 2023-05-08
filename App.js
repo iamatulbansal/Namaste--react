@@ -2,12 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 
 const Title = () => <h1 className='container'>Heading</h1>;
-//*WHEN WE PUT ONE COMPONENT INSIDE ANOTHER COMPONENT , WE CALL IT COMPONENT COMPOSITION.
+
 const HeadingComponent = () => {
     return (
         <div>
             <Title />
-            { }
+
             <h1>Namaste React Functional components</h1>
             <h2>This is a Heading 2</h2>
         </div>
@@ -19,7 +19,7 @@ root.render(<HeadingComponent />);
 
 /**
  * *Day-4-classes
- * todo: When you create a project or webApp First Do proper planning and structure layout 
+ * todo:When you create a project or webApp First Do proper planning and structure layout .
  * *AppLayout-planning
  * Header-
  *       - logo
@@ -40,7 +40,10 @@ root.render(<HeadingComponent />);
  * 
  * 
  * 
- * todo: when we use multi element inside our components then must be wrap up inside single element JSX expressions must have one parent element
+ * *when we use multi element inside our components then must be wrap up inside single element JSX expressions must have one parent element
+ * 
+ * *React.Fragment is a Component come from React core library or come from react node_modules
+ * 
  * 
  * 
  *  
