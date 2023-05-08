@@ -30,15 +30,26 @@ const Header = () => {
 };
 
 //WE ARE GOING TO CREATE RESTAURANT CARD
+//WE ARE GOING TO GET PREPARE/CREATE RESTAURANT CARD DATA 
+const burgerKing = {
+    image: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/uvzfjwcslztz1tzjlzfg",
+    name: "Burger King",
+    cuisines: ["Burgers", "American"],
+    eta: "37",
+    rating: "3.4",
+    price: "200"
+
+
+}
 const RestaurantCard = () => {
     return (
         <div className="restaurant-card">
-            <img src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/uvzfjwcslztz1tzjlzfg" alt="Restaurant-card-img" />
-            <strong>Ahuja Chinese Food Court</strong>
-            <p>Indian, Sweets, Beverages</p>
-            <p><b>3.5</b> STAR</p>
-            <p><b>37</b> MINS</p>
-            <p><b>₹200</b> FOR TWO</p>
+            <img src={burgerKing.image} alt="Restaurant-card-img" />
+            <strong>{burgerKing.name}</strong>
+            <p>{burgerKing.cuisines.join(",")}</p>
+            <p><b>{burgerKing.rating}</b> STAR</p>
+            <p><b>{burgerKing.eta}</b> MINS</p>
+            <p><b>{burgerKing.price}</b> FOR TWO</p>
         </div>
     )
 }
@@ -52,6 +63,17 @@ const Body = () => {
             <RestaurantCard />
             <RestaurantCard />
             <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+            <RestaurantCard />
+
+
         </div>
     );
 };
