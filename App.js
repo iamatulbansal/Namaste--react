@@ -53,7 +53,9 @@ const Body = () => {
     return (
         <div className='body-container'>
             {restaurantList.map((restaurant) => {
-                return <RestaurantCard {...restaurant.data} key={restaurant.data.id} />;
+                const { name, id, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId } = restaurant.data;
+                //* NOTE NOT SENDING ALL DATA TO OTHER COMPONENTS ONLY SEND THE USABLE DATA MAKE YOUR COMPONENTS LITHER SO YOUR APP IS WORKING FASTER
+                return <RestaurantCard {...{ name, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId }} key={id} />;
             })}
         </div>
     );
