@@ -26,3 +26,19 @@
   border: 1px solid;
   border-radius: 20px;
 }
+.body-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px 0px;
+  width: 100%;
+}
+.restaurant-card {
+  border: 1px solid;
+  padding: 8px;
+  margin: 10px auto;
+  border-radius: 10px;
+  width: 200px;
+}
+.restaurant-card > img {
+  width: 100%;
+}
