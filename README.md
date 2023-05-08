@@ -72,6 +72,49 @@ What is react components -
 ans-function
 
 *WHEN WE PUT ONE COMPONENT INSIDE ANOTHER COMPONENT , WE CALL IT COMPONENT COMPOSITION.
+
+
+
+/**
+ * *Day-4-classes
+ * todo:When you create a project or webApp First Do proper planning and structure layout .
+ * *AppLayout-planning
+ * Header-
+ *       - logo
+ *       - nav items(right side)
+ *       - cart (right side)
+ * Body-
+ *      -search-bar
+ *      -RestaurantList
+ *       -RestaurantCard
+ *        -image
+ *        -name
+ *        -rating
+ *        -cuisines
+ *
+ * Footer-
+ *        -Link
+ *        -Copyright
+ *
+ *
+ *
+ * *when we use multi element inside our components then must be wrap up inside single element JSX expressions must have one parent element
+ *
+ * *React.Fragment is a Component come from React core library or come from react node_modules
+ *
+ * Todo:---->Config Driven UI
+ * *Dynamic UI
+ * *Control UI using Data.config.json file
+ *
+ *
+ * *Props  is a Properties
+ * *VIRTUAL DOM
+ * *RECONCILIATION ALGORITHM 
+ * *REACT.FIBER-LEARN MORE THIS IS A NEW ALGORITHMS IN REACT >16 TO RECONCILIATION FASTER
+ * *ALWAYS USE UNIQUE KEY IN OUR ELEMENT NOT USING INDEXES AS A KEY
+ *
+ * */
+
  */ 
 
  
