@@ -1,38 +1,25 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import restaurantList from "./db/restaurant-list.json";
+import restaurantList from "../db/restaurant-list.json";
 
-const Title = () => {
-    return (
-        <React.Fragment>
-            <a href='/' className='titleAnchorTag'>
-                <img
-                    alt='LOGO'
-                    className='logo'
-                    src='https://obs.line-scdn.net/0m0339dd5b72513e8a8d6127b836e5ecf1e128f1da5cb7'
-                />
-            </a>
-        </React.Fragment>
-    );
-};
+/////////////////////////////IMPORT-SECTION-CODE////////////////////////////////////////////////
+//DEFAULT IMPORT-IT SHOULD BE A SINGLE EXPORT DEFAULT COMPONENT
+import Header from "./components/Header";
+//NAME IMPORT-THIS IS NOT A OBJECT DESTRUCTURING
+// *import { Header } from "./components/Header";
+// ALL EXPORT COMPONENTS/FUNCTION :-SUPPOSE WE HAVE MULTIPLE COMPONENTS IN THE SAME FILE WE CAN USE/IMPORT LIKE THIS DYNAMIC IMPORT, BUT MAKE SURE YOUR ALL COMPONENTS IS NAME EXPORT IN OUR FILE THEN YOUR IMPORT LIKE THAT
+// *import * as controller from "./components/Header";
+/* 
+import obj from "./components/Header";
+const {Header}=obj//WHEN YOU WRITE CODE LIKE THIS SO THAT IS NOT OBJECT DESTRUCTURING IT GIVE AND ERROR
 
-const Header = () => {
-    return (
-        <div className='container'>
-            <Title />
-            <ul className='nav-items'>
-                <li className='nav-list'>Home</li>
-                <li className='nav-list'>About</li>
-                <li className='nav-list'>Cart</li>
-                <li className='nav-list'>Logout</li>
-            </ul>
-        </div>
-    );
-};
+*ERROR IS:-caught TypeError: Cannot destructure property 'Header' of '(0 , _headerDefault.default)' as it is undefined.
+*/
 
+/////////////////////////////////////////////////////////////////////////////
 //WE ARE GOING TO CREATE RESTAURANT CARD
 //WE ARE GOING TO GET PREPARE/CREATE RESTAURANT CARD DATA
-
+//CONFIG DRIVEN UI
 const RestaurantCard = (props) => {
 
     const { name, cuisines, avgRating, lastMileTravelString, costForTwoString, cloudinaryImageId, } = props;
