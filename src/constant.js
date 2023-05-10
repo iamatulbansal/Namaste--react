@@ -1,5 +1,9 @@
 // constant.js OR config.js BOTH FILE NAMING ARE SAME
 
+// export const RESTAURANTS_API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING"
+export const RESTAURANTS_API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.3164945&lng=78.03219179999999&page_type=DESKTOP_WEB_LISTING"
+
+
 export const IMG_CDN_LINK = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
 export const LOGO_LINK = 'https://obs.line-scdn.net/0m0339dd5b72513e8a8d6127b836e5ecf1e128f1da5cb7'
 
@@ -1794,6 +1798,153 @@ export const restaurantList = [
         "data": {
             "type": "F",
             "id": "354939",
+            "name": "Shanghai House",
+            "uuid": "22034f4d-101e-4f4a-aa2a-e78809ebc5d3",
+            "city": "1",
+            "area": "Indiranagar",
+            "totalRatingsString": "1000+ ratings",
+            "cloudinaryImageId": "f6wlizhxy4rp05qtqbom",
+            "cuisines": [
+                "Chinese",
+                "Thai",
+                "Seafood",
+                "Asian",
+                "Healthy Food",
+                "Beverages"
+            ],
+            "tags": [],
+            "costForTwo": 40000,
+            "costForTwoString": "₹400 FOR TWO",
+            "deliveryTime": 28,
+            "minDeliveryTime": 28,
+            "maxDeliveryTime": 28,
+            "slaString": "28 MINS",
+            "lastMileTravel": 7.400000095367432,
+            "slugs": {
+                "restaurant": "chinese-bae-sector-50-sector-50",
+                "city": "bangalore"
+            },
+            "cityState": "1",
+            "address": "NO.40, KODIHALLI VILLAGE, JEEVAN BHEEMA NAGAR, HAL 2ND STAGE, BANGALORE., Shanthinagara , B.B.M.P East, Karnataka-560075",
+            "locality": "1st Stage",
+            "parentId": 17040,
+            "unserviceable": false,
+            "veg": false,
+            "select": false,
+            "favorite": false,
+            "tradeCampaignHeaders": [],
+            "aggregatedDiscountInfo": {
+                "header": "FLAT150 off",
+                "shortDescriptionList": [
+                    {
+                        "meta": "FLAT150 off | Use FLATDEAL",
+                        "discountType": "Flat",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "FLAT150 off | Use FLATDEAL",
+                        "discountType": "Flat",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "aggregatedDiscountInfoV2": {
+                "header": "₹150 OFF",
+                "shortDescriptionList": [
+                    {
+                        "meta": "Use FLATDEAL",
+                        "discountType": "Flat",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "descriptionList": [
+                    {
+                        "meta": "FLAT150 off | Use FLATDEAL",
+                        "discountType": "Flat",
+                        "operationType": "RESTAURANT"
+                    }
+                ],
+                "subHeader": "",
+                "headerType": 0,
+                "superFreedel": ""
+            },
+            "ribbon": [
+                {
+                    "type": "PROMOTED"
+                }
+            ],
+            "chain": [],
+            "feeDetails": {
+                "fees": [
+                    {
+                        "name": "time",
+                        "fee": 2500,
+                        "message": ""
+                    },
+                    {
+                        "name": "distance",
+                        "fee": 7900,
+                        "message": ""
+                    },
+                    {
+                        "name": "special",
+                        "fee": 0,
+                        "message": ""
+                    }
+                ],
+                "totalFees": 10400,
+                "message": "",
+                "title": "Delivery Charge",
+                "amount": "10400",
+                "icon": ""
+            },
+            "availability": {
+                "opened": true,
+                "nextOpenMessage": "",
+                "nextCloseMessage": ""
+            },
+            "longDistanceEnabled": 0,
+            "rainMode": "NONE",
+            "thirdPartyAddress": false,
+            "thirdPartyVendor": "",
+            "adTrackingID": "cid=6721999~p=25~eid=00000187-fd2c-e14b-3ade-7a5400da1977",
+            "badges": {
+                "imageBased": [],
+                "textBased": [],
+                "textExtendedBadges": []
+            },
+            "lastMileTravelString": "7.4 kms",
+            "hasSurge": false,
+            "sla": {
+                "restaurantId": "354939",
+                "deliveryTime": 28,
+                "minDeliveryTime": 28,
+                "maxDeliveryTime": 28,
+                "lastMileTravel": 7.400000095367432,
+                "lastMileDistance": 0,
+                "serviceability": "SERVICEABLE",
+                "rainMode": "NONE",
+                "longDistance": "NOT_LONG_DISTANCE",
+                "preferentialService": false,
+                "iconType": "EMPTY"
+            },
+            "promoted": true,
+            "avgRating": "3.9",
+            "totalRatings": 1000,
+            "new": false
+        },
+        "subtype": "basic"
+    },
+    {
+        "type": "restaurant",
+        "data": {
+            "type": "F",
+            "id": "35495539",
             "name": "Shanghai House",
             "uuid": "22034f4d-101e-4f4a-aa2a-e78809ebc5d3",
             "city": "1",
