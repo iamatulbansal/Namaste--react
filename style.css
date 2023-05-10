@@ -60,3 +60,21 @@
   font-size: small;
   border-radius: 10px;
 }
+.user-login-items {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 20%;
+  list-style-type: disclosure-closed;
+  cursor: pointer;
+}
+.login {
+  background-color: greenyellow;
+  color: rgb(54, 7, 7);
+  padding: 10px;
+}
+.logout {
+  background-color: red;
+  color: white;
+  padding: 10px;
+}

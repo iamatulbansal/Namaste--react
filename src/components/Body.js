@@ -5,7 +5,7 @@ import RestaurantCard from "./RestaurantCard";
 //*SEARCH FILTER LOGIC
 function searchFilter(searchTexts, restaurants) {
   return restaurants.filter((restaurant) => {
-    return restaurant.data.name.includes(searchTexts);
+    return restaurant.data.name.toLowerCase().includes(searchTexts.toLowerCase());
   });
 }
 
