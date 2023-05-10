@@ -1,6 +1,7 @@
 // constant.js OR config.js BOTH FILE NAMING ARE SAME
 
 export const IMG_CDN_LINK = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
+export const LOGO_LINK = 'https://obs.line-scdn.net/0m0339dd5b72513e8a8d6127b836e5ecf1e128f1da5cb7'
 
 
 
@@ -1935,5 +1936,5 @@ export const restaurantList = [
         },
         "subtype": "basic"
     },
-    
+
 ]

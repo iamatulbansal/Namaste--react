@@ -1,14 +1,11 @@
 import React from "react";
+import { LOGO_LINK } from "../constant";
 //TITlE COMPONENTS
 export const Title = () => {
   return (
     <React.Fragment>
       <a href='/' className='titleAnchorTag'>
-        <img
-          alt='LOGO'
-          className='logo'
-          src='https://obs.line-scdn.net/0m0339dd5b72513e8a8d6127b836e5ecf1e128f1da5cb7'
-        />
+        <img alt='LOGO' className='logo' src={LOGO_LINK} />
       </a>
     </React.Fragment>
   );
