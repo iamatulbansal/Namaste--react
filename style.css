@@ -42,3 +42,21 @@
 .restaurant-card > img {
   width: 100%;
 }
+.search-container {
+  padding: 10px;
+}
+.search-container > input {
+  padding: 10px 2px;
+}
+.search-container > button {
+  padding: 10px 2px;
+  margin: auto 2px;
+  border: 1px solid green;
+  background-color: lightgreen;
+}
+.chip {
+  background-color: aquamarine;
+  padding: 2px;
+  font-size: small;
+  border-radius: 10px;
+}

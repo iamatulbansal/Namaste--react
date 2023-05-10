@@ -1934,5 +1934,6 @@ export const restaurantList = [
             "new": false
         },
         "subtype": "basic"
-    }
+    },
+    
 ]

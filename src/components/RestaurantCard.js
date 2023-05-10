@@ -1,6 +1,7 @@
 
-import {IMG_CDN_LINK} from '../constant'
+import { IMG_CDN_LINK } from '../constant'
 const RestaurantCard = (props) => {
+
     const {
         name,
         cuisines,
