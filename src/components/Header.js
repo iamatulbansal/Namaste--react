@@ -1,5 +1,13 @@
 import React from "react";
 import { LOGO_LINK } from "../constant";
+
+
+
+
+function loginUser() {
+  return true;
+}
+
 //TITlE COMPONENTS
 export const Title = () => {
   return (
@@ -23,6 +31,7 @@ const Header = () => {
         <li className='nav-list'>Logout</li>
       </ul>
     </div>
+    
   );
 };
 
