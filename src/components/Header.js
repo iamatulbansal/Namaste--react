@@ -18,7 +18,7 @@ export const Title = () => {
 
 //HEADER COMPONENTS
 const Header = () => {
-  const [isValid, setIsValid] = useState(loginUser());
+  const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (
     <div className='container'>
       <Title />
@@ -44,13 +44,13 @@ const Header = () => {
           // }))
           //We are not doing this  but but we have a alternative of this a alter native  is a ternary operates
           //this is a (true/condition)? true:false;
-          isValid ? (
+          isLoggedIn ? (
             <button className='logout' onClick={() => {
-              setIsValid(false)
+              setIsLoggedIn(false)
             }}>Logout</button>
           ) : (
             <button className='login' onClick={() => {
-              setIsValid(true)
+              setIsLoggedIn(true)
             }}>Login</button>
           )
         }
