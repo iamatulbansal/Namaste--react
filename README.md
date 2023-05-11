@@ -183,6 +183,72 @@ https://www.telerik.com/blogs/how-to-bind-any-component-data-react-one-way-bindi
   *ALWAYS PUT EXPORT DEFAULT AND ALWAYS WRITE ONE-SEPARATE COMPONENTS IN ONE FILE THIS IS A GOOD PRACTICE
 
 
+
+ <h4>Day-6</h4>
+ * microservices-done
+ * monolith -done
+ * fetch api call -done
+ * search button lowercase-done
+ * useEffect lifecycle method using hooks -done
+ * create login and logout btn -done
+ * fetch api Data using this  link https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING -done
+ * 
+ * cover conditional rendering   inside our react curly breaches -done
+ * explore some  js expression and statement-done
+ * create our simmer layout-done
+ * Earlier return 
+ * 
+ * 
+ * 
+  **note some point here when our components is render then my useState variable value is initial value
+   *then when my components is fully render that time instant my useState() value is updated using useEffect()
+   *
+   *
+   * todo: useEffect()-> lifeCycle process
+   * componentDidMount-initial render is called that time to mounting face in showing our ui in the Dom window
+   * componentDidUpdate- this is called initial render then after whenever my local variable state is updated then my components updated
+   * componentWillUnMount-this is call when my components is rendered in the dom that time to components lifecycle is ended
+   *
+   *
+   *
+todo:Homework
+-FIRST CHECK ALL RESTAURANTS >>
+ -SHOW THE SIMMER UI >>>
+ -THEN YOU DO FILTER RESTAURANT >>>
+ -THEN FILTER RESTAURANT NOT THERE >>
+ -THEN NOT FOUND MESSAGE IS SHOW IN THE UI 
+ -Done
+
+
+
+ WHEN YOU DOING CONDITIONAL RENDERING THEN WE FACE SOME ERROR LENGTH IS UNDEFINED THEN YOU PASS THIS SIGN "?" OPTIONAL CHAINING
+ WRITE YOUR LOGIC FOR SIMMER UI
+
+
+SUPPOSE YOUR FILTER CARD NOT MATCH IN YOUR SEARCH TEXT THEN YOU SHOWING NOT FOUND CARDS LIKE THIS
+ if (filteredRestaurants?.length === 0 && !filteredRestaurants)
+     return <p>We Don't Have any restaurant</p>;
+console.log("render"); //every time my component is re-render then this is called
+
+ *WHAT IS CONDITIONAL RENDERING
+ IF RESTAURANTS IS EMPTY => SHOWING SIMMER UI
+ IF RESTAURANTS HAS DATA => SHOWING ACTUAL UI
+  NOT RENDER COMPONENTS THIS IS CALLED EARLIER RETURN
+    let render="Render"//You are not doing this
+          console.log(render)
+          console.log("Render")//We are doing this and this is a expression
+
+          ((a = 10), console.log(a))//this is a expression
+
+            ((if(true){
+            console.log("if")
+          }else{
+            console.log("else")
+          }))
+         We are not doing this  but but we have a alternative of this a alter native  is a ternary operates
+         this is a (true/condition)? true:false;
+ * 
+ *  
  */ 
 
  
