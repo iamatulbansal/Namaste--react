@@ -8,6 +8,7 @@ import ContactUs from "./components/ContactUs";
 import About from "./components/About";
 import Error from "./components/Error";
 import RestaurantDetails from "./components/RestaurantDetails";
+import Profile from "./components/Profile";
 
 
 const AppLayout = () => {
@@ -32,7 +33,19 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+        children: [
+          {
+            //if you pass your path starting / then this is give error and this is attach to root path so every time put path without '/' Got it.we pass relative/nested path using like this "profile" and access child route using Outlet component we always put Outlet inside your parent components 
+            path: "profile",
+            element: <Profile />,
+
+          },
+        ]
       },
+      // {
+      //   path: "/about/profile",//if you use like this this is also perfectly fine but we will use path using Outlet components get children using Outlet
+      //   element: <Profile />,
+      // },
       {
         path: "/contact",
         element: <ContactUs />,

@@ -13,6 +13,7 @@ export const Title = () => {
       <a href='/' className='titleAnchorTag'>
         <img alt='LOGO' className='logo' src={logo} />
       </a>
+      
     </React.Fragment>
   );
 };
