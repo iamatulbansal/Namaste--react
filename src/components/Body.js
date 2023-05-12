@@ -20,16 +20,19 @@ function filterData(searchText, restaurants) {
 }
 
 const Body = () => {
+
+
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   console.log(!allRestaurants);
-
+ 
   useEffect(() => {
     //Api Call
     getRestaurants();
     console.log("useEffect");
   }, []); //[] This is a Dependency array
+
 
   async function getRestaurants() {
     try {

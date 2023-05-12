@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { LOGO_LINK } from "../constant";
-
+// import { LOGO_LINK } from "../constant";
+import logo from '../assets/img/logo.jpg'
 function loginUser() {
   return false;
 }
@@ -10,7 +10,7 @@ export const Title = () => {
   return (
     <React.Fragment>
       <a href='/' className='titleAnchorTag'>
-        <img alt='LOGO' className='logo' src={LOGO_LINK} />
+        <img alt='LOGO' className='logo' src={logo} />
       </a>
     </React.Fragment>
   );
@@ -25,6 +25,7 @@ const Header = () => {
       <ul className='nav-items'>
         <li className='nav-list'>Home</li>
         <li className='nav-list'>About</li>
+        <li className='nav-list'>Contact-us</li>
         <li className='nav-list'>Cart</li>
         <li className='nav-list'>Logout</li>
       </ul>
