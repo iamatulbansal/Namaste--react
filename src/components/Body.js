@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from 'react-router-dom'
 import { RESTAURANTS_API_LINK, restaurantList } from "../constant";
 import RestaurantCard from "./RestaurantCard";
 import Simmer from "../Simmer";
@@ -26,7 +27,7 @@ const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState("");
   console.log(!allRestaurants);
- 
+
   useEffect(() => {
     //Api Call
     getRestaurants();
@@ -87,7 +88,7 @@ const Body = () => {
           <p>We Don't Have any Search match restaurant</p>
         ) : (
           filteredRestaurants.map((restaurant) => (
-            <RestaurantCard {...restaurant.data} key={restaurant.data.id} />
+            <Link key={restaurant.data.id} to={`/restaurant/${restaurant.data.id}`}><RestaurantCard {...restaurant.data} /></Link>
           ))
         )}
       </div>
