@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import Profile from "./Profile";
 
 const About = () => {
     return (
@@ -9,6 +10,7 @@ const About = () => {
 
             <Link to="profile" ><b>Go to profile-section</b></Link>
             <Outlet /> {/* Outlet using related or nested routs always put inside your parent components */}
+         
         </div>
     )
 }

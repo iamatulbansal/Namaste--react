@@ -28,8 +28,10 @@ const Header = () => {
         <li className='nav-list'><Link to="/">Home</Link></li>
         <li className='nav-list'><Link to="/about">About</Link></li>
         <li className='nav-list'><Link to="/contact">Contact-us</Link></li>
+        <li className='nav-list'><Link to="/profile">Profile</Link></li>
+        <li className='nav-list'><Link to="/gallery">Gallery</Link></li>
         <li className='nav-list'>Cart</li>
-        <li className='nav-list'>Logout</li>
+   
       </ul>
       <div className='user-login-items'>
         {/* i learn Js Expression & statement */}

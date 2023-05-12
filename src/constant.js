@@ -5,7 +5,7 @@
 export const RESTAURANTS_API_LINK = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&page_type=DESKTOP_WEB_LISTING"
 
 //Restaurant menu details
-export const RESTAURANTS_MENU_API_LINK ="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId=";//pass is 299 at the end of the link
+export const RESTAURANTS_MENU_API_LINK = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=19.0759837&lng=72.8776559&restaurantId=";//pass is 299 at the end of the link
 
 
 
@@ -13,6 +13,9 @@ export const RESTAURANTS_MENU_API_LINK ="https://www.swiggy.com/dapi/menu/pl?pag
 export const IMG_CDN_LINK = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
 export const LOGO_LINK = 'https://obs.line-scdn.net/0m0339dd5b72513e8a8d6127b836e5ecf1e128f1da5cb7'
 
+//Todo:Most important Thing
+//*Note-Router root path starting from / like this to="/profile"
+//*Router parent relative path starting from ''  like this to="profile"
 
 
 
