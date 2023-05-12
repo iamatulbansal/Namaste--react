@@ -105,29 +105,3 @@ const RestaurantDetails = () => {
   );
 };
 export default RestaurantDetails;
-/***
- * Todo:-->
- * React-router-don for routing
- * useParams for get id from url
- * useRouterError() hooks for page not found 
- * create Error component
- * use createBrowserRouter for creating path config 
- * pass RouterProvider in side our root.render() method
- * pass one router props inside our RouterProvider components
- * SSR-server side rendering
- * CSR-client side rendering
- * SPA-single page application
- * use assets folder to contain all images and logos related to our project
- * if you optimizing your application performance then put your images in CDN cloud-hosting platform then fetch and use inside your project this is a best way
- * don't put your useSate hooks and other hooks outside of your components this is throw Error
- *Don't use unnecessary npm packages and read about all documentation of npm then put inside your project 
- and use some important npm library for form or validation like formik and yup
- * 
- * 
- * Read more on Nested Routing dynamic routing segment routing and read about loader
- * Outlat-for access nested children path read and practice more about this 
- * 
- * Read about javascript Object read about lodash
- * Read about javascript Array all method 
- * 
- */
