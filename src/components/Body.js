@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
-import { RESTAURANTS_API_LINK, restaurantList } from "../constant";
-import RestaurantCard from "./RestaurantCard";
-import Simmer from "../Simmer";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { RESTAURANTS_API_LINK, restaurantList } from '../constant';
+import RestaurantCard from './RestaurantCard';
+import Simmer from '../Simmer';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -21,19 +21,16 @@ function filterData(searchText, restaurants) {
 }
 
 const Body = () => {
-
-
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
-  const [searchText, setSearchText] = useState("");
+  const [searchText, setSearchText] = useState('');
   console.log(!allRestaurants);
 
   useEffect(() => {
     //Api Call
     getRestaurants();
-    console.log("useEffect");
+    console.log('useEffect');
   }, []); //[] This is a Dependency array
-
 
   async function getRestaurants() {
     try {
@@ -42,7 +39,7 @@ const Body = () => {
       //Optional Chaining
       const seeAllRestaurants = data?.data?.cards.filter(
         (seeAllRestaurants) => {
-          return seeAllRestaurants.cardType === "seeAllRestaurants";
+          return seeAllRestaurants.cardType === 'seeAllRestaurants';
         }
       );
 
@@ -50,7 +47,7 @@ const Body = () => {
       setFilteredRestaurants(seeAllRestaurants[0]?.data?.data?.cards);
       //We need one more copy for filtering my restaurants card details
     } catch (error) {
-      console.log("API-ERROR=>", error);
+      console.log('API-ERROR=>', error);
     }
   }
 
@@ -58,10 +55,10 @@ const Body = () => {
 
   return (
     <>
-      <div className='search-container'>
+      <div className="search-container">
         <input
-          type='text'
-          placeholder='Search'
+          type="text"
+          placeholder="Search"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -71,16 +68,16 @@ const Body = () => {
           onClick={() => {
             const searchResult = filterData(searchText, allRestaurants);
             setFilteredRestaurants(searchResult);
-            setSearchText("");
+            setSearchText('');
           }}
         >
           Search
         </button>
         <br />
         <br />
-        <span className='chip'>{searchText}</span>
+        <span className="chip">{searchText}</span>
       </div>
-      <div className='body-container'>
+      <div className="body-container">
         {allRestaurants?.length === 0 ? (
           <SimmerReusableUpdate />
         ) : filteredRestaurants?.length === 0 ? (
@@ -88,7 +85,12 @@ const Body = () => {
           <p>We Don't Have any Search match restaurant</p>
         ) : (
           filteredRestaurants.map((restaurant) => (
-            <Link key={restaurant.data.id} to={`/restaurant/${restaurant.data.id}`}><RestaurantCard {...restaurant.data} /></Link>
+            <Link
+              key={restaurant.data.id}
+              to={`/restaurant/${restaurant.data.id}`}
+            >
+              <RestaurantCard {...restaurant.data} />
+            </Link>
           ))
         )}
       </div>

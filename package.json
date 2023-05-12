@@ -2,10 +2,19 @@
   "name": "namaste-react",
   "version": "1.0.0",
   "description": "",
+  "eslintConfig": {
+    "env": {
+      "es6": true,
+      "browser": false,
+      "node": true
+    }
+  },
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
-    "test": "jest"
+    "test": "jest",
+    "format": "prettier --write \"src/**/*.{js,jsx}\"",
+    "lint": "eslint \"src/**/*.{js,jsx}\" --quiet"
   },
   "repository": {
     "type": "git",
@@ -26,7 +35,10 @@
     "@babel/core": "^7.21.8",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.3",
-    "process": "^0.11.10"
+    "process": "^0.11.10",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^8.1.0",
+    "prettier": "^2.8.1"
   },
   "browserslist": [
     "> 0.5%, last 2 versions, not dead"

@@ -1,41 +1,53 @@
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { IMG_CDN_LINK, RESTAURANTS_MENU_API_LINK } from "../constant";
-import ShimmerImg from "../assets/img/Shimmer.gif";
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { IMG_CDN_LINK, RESTAURANTS_MENU_API_LINK } from '../constant';
+import ShimmerImg from '../assets/img/Shimmer.gif';
 
 const MenuTableView = (props) => {
-  const menusList = props.menusList ?? []
-  console.log("menusList", menusList)
-  return <table style={{ width: "100%" }}>
-    <tr style={{ background: "lightblue" }}>
-      <th>ID</th>
-      <th>Name</th>
-      <th>Price</th>
-      <th>Image</th>
-    </tr>
-
-    {menusList?.length === 0 ? <p>Menu List Not Found</p> : menusList?.map((menu) => (
-      <tr className="menu-cart">
-        <td>{menu?.id}</td>
-        <td>{menu?.name}</td>
-        <td>{menu?.price}</td>
-        <td><img width={100} style={{ padding: '10px', borderRadius: "10px" }} src={IMG_CDN_LINK + menu?.imageId} /></td>
+  const menusList = props.menusList ?? [];
+  console.log('menusList', menusList);
+  return (
+    <table style={{ width: '100%' }}>
+      <tr style={{ background: 'lightblue' }}>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Image</th>
       </tr>
-    ))}
-  </table>
-}
+
+      {menusList?.length === 0 ? (
+        <p>Menu List Not Found</p>
+      ) : (
+        menusList?.map((menu) => (
+          <tr className="menu-cart">
+            <td>{menu?.id}</td>
+            <td>{menu?.name}</td>
+            <td>{menu?.price}</td>
+            <td>
+              <img
+                width={100}
+                style={{ padding: '10px', borderRadius: '10px' }}
+                src={IMG_CDN_LINK + menu?.imageId}
+              />
+            </td>
+          </tr>
+        ))
+      )}
+    </table>
+  );
+};
 const Shimmer = () => {
   return (
     <div>
       {Array(2)
-        .fill("")
+        .fill('')
         .map((cart, index) => (
           <img
             key={index}
-            width={"50%"}
+            width={'50%'}
             height={600}
             src={ShimmerImg}
-            alt='Restaurant-card-img'
+            alt="Restaurant-card-img"
           />
         ))}
     </div>
@@ -76,18 +88,18 @@ const RestaurantDetails = () => {
       const data = await response.json();
       setRestaurantDetails(data);
     } catch (error) {
-      console.log("error", error);
+      console.log('error', error);
     }
   }
   return !restaurantInfo ? (
     <Shimmer />
   ) : (
-    <div className='restaurant-details-container'>
-      <div className='restaurant-details'>
+    <div className="restaurant-details-container">
+      <div className="restaurant-details">
         <h1>RESTAURANT DETAILS</h1>
         <img
           src={IMG_CDN_LINK + restaurantInfo?.cloudinaryImageId}
-          alt='cloudinaryImageId'
+          alt="cloudinaryImageId"
         />
         <h2>Restaurant-ID:{resId}</h2>
         {/* passed optional chinning */}
@@ -96,10 +108,9 @@ const RestaurantDetails = () => {
         <h3>city:{restaurantInfo?.city}</h3>
         <h3>locality:{restaurantInfo?.locality}</h3>
       </div>
-      <div className='restaurant-menu'>
+      <div className="restaurant-menu">
         <h1>MENU:-({menusList?.length})</h1>
         <MenuTableView menusList={menusList} />
-
       </div>
     </div>
   );
