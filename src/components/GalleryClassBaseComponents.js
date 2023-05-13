@@ -16,6 +16,7 @@ class GalleryClassBaseComponents extends React.Component {
   componentDidMount() {
     //HERE IS BEST PLACE FOR API CALL
     console.log('Parent -ComponentDidMount...');
+    //componentDidMount only one time mount then if components is re-render then all time update not mount and functional components our components  always reload and mounting again and again
   }
 
   render() {
@@ -37,7 +38,31 @@ class GalleryClassBaseComponents extends React.Component {
         >
           CountUpdate
         </button>
-        <GalleryClassBaseChildComponent />
+        <GalleryClassBaseChildComponent name={"first"} />
+        <GalleryClassBaseChildComponent name={"second"} />
+        {/*** 
+         * if we hve multiple sibling components then life cycle work like this 
+         * 
+         * //Dom Render face
+         * parent constructor
+         * parent render
+         * first-child constructor
+         * first-child render
+         * second-child constructor
+         * second-child render
+         * 
+         * 
+         * //DOM Commit Face
+         * first-child componentDidMount
+         * second-child componentDidMount
+         * Parent componentDidMount
+         * 
+         * 
+         * 
+         * 
+         * 
+         * 
+          */}
       </div>
     );
   }
