@@ -8,30 +8,33 @@ const MenuTableView = (props) => {
   console.log('menusList', menusList);
   return (
     <table style={{ width: '100%' }}>
-      <tr style={{ background: 'lightblue' }}>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Price</th>
-        <th>Image</th>
-      </tr>
-
+      <tbody>
+        <tr style={{ background: 'lightblue' }}>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Image</th>
+        </tr>
+      </tbody>
       {menusList?.length === 0 ? (
         <p>Menu List Not Found</p>
       ) : (
-        menusList?.map((menu) => (
-          <tr className="menu-cart">
-            <td>{menu?.id}</td>
-            <td>{menu?.name}</td>
-            <td>{menu?.price}</td>
-            <td>
-              <img
-                width={100}
-                style={{ padding: '10px', borderRadius: '10px' }}
-                src={IMG_CDN_LINK + menu?.imageId}
-              />
-            </td>
-          </tr>
-        ))
+        <tbody>
+          {menusList?.map((menu) => (
+            <tr className="menu-cart" key={menu?.id}>
+              <td>{menu?.id}</td>
+              <td>{menu?.name}</td>
+              <td>{menu?.price}</td>
+              <td>
+                <img
+                  width={100}
+                  style={{ padding: '10px', borderRadius: '10px' }}
+                  src={IMG_CDN_LINK + menu?.imageId}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
       )}
     </table>
   );
