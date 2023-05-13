@@ -15,10 +15,26 @@ class GalleryClassBaseComponents extends React.Component {
   }
   componentDidMount() {
     //HERE IS BEST PLACE FOR API CALL
+
+    this.timer = setInterval(() => {
+      console.log("Timer")
+    }, 1000)
+    //Todo:Remember This point So you know react is a single page application so at the end of the day react has follow single code so whenever you put timer inside then  this timer never end till application is close so this timer give slowDown our application performance So alway ways remember*** clearInterval every time with using ComponentWillUnmount unmounting face 
+
     console.log('Parent -ComponentDidMount...');
     //componentDidMount only one time mount then if components is re-render then all time update not mount and functional components our components  always reload and mounting again and again
   }
+  componentDidUpdate() {
 
+
+    
+    console.log('Parent -ComponentDidUpdate...');
+  }
+  componentWillUnmount() {
+    clearInterval(this.timer)//Todo:Alway write clean-Up this is important and read about more
+      //Todo:Remember This point So you know react is a single page application so at the end of the day react has follow single code so whenever you put timer inside then  this timer never end till application is close so this timer give slowDown our application performance So alway ways remember*** clearInterval every time with using ComponentWillUnmount unmounting face 
+    console.log("Parent -ComponentWillUnmount")
+  }
   render() {
     console.log('Parent -Render...');
     const { count1, count2 } = this.state; //we can destructure our state like this
@@ -28,7 +44,13 @@ class GalleryClassBaseComponents extends React.Component {
         <h2>Name:"Atul Bansal"</h2>
         <h2>Count1:{count1}</h2>
         <h2>Count2:{count2}</h2>
-        <button
+        <button //And this time to click this btn then your  
+          /***
+             parent render
+             first-child render
+             second-child render
+            
+            */
           onClick={() => {
             this.setState({
               count1: 1,
