@@ -18,7 +18,7 @@ const ContactUs = () => {
       }
       console.log('Timer2');
     }, 0);
-    //if you not clear this time out then this time out slow down your application performance
+
     return () => {
       //this is fire after componentWillUnmount
       setTimeout(timer);

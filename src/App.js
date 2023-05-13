@@ -42,10 +42,7 @@ const appRouter = createBrowserRouter([
           },
         ],
       },
-      // {
-      //   path: "/about/profile",//if you use like this this is also perfectly fine but we will use path using Outlet components get children using Outlet
-      //   element: <Profile />,
-      // },
+
       {
         path: '/contact',
         element: <ContactUs />,
@@ -68,3 +65,6 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={appRouter} />);
+/***
+ 
+ */
