@@ -5,7 +5,7 @@ import ShimmerImg from '../assets/img/Shimmer.gif';
 
 const MenuTableView = (props) => {
   const menusList = props.menusList ?? [];
-  console.log('menusList', menusList);
+  // console.log('menusList', menusList);
   return (
     <table style={{ width: '100%' }}>
       <tbody>

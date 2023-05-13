@@ -37,7 +37,7 @@ class GalleryClassBaseComponents extends React.Component {
     this.state = {
       userInfo: {},
     };
-    console.log('Parent -Constructor...');
+    // console.log('Parent -Constructor...');
   }
   //WE PASS ASYNC HERE LIKE THIS BUT WE DO NOT PASS ASYNC INSIDE YOUR useEffect FIRST FUNCTION ARGUMENT AND READ ABOUT THIS
   async componentDidMount() {
@@ -52,7 +52,7 @@ class GalleryClassBaseComponents extends React.Component {
         'https://api.github.com/users/iamatulbansal'
       );
       const json = await response.json();
-      console.log(json);
+      // console.log(json);
       this.setState({
         userInfo: json,
       });
@@ -60,7 +60,7 @@ class GalleryClassBaseComponents extends React.Component {
       console.log(error);
     }
 
-    console.log('Parent -ComponentDidMount...');
+    // console.log('Parent -ComponentDidMount...');
   }
   componentDidUpdate(prevProps, prevState) {
     //THIS IS LIKE DEPENDENCY ARRAY BUT DON'T COMPARE WITH USEEFFECT GOT IT
@@ -72,20 +72,20 @@ class GalleryClassBaseComponents extends React.Component {
       //Code here
     }
     if (this.state.userInfo === prevState.userInfo) {
-      console.warn('count-Change');
+      // console.warn('count-Change');
       //Code Here
     }
-    console.log('Parent -ComponentDidUpdate...');
+    // console.log('Parent -ComponentDidUpdate...');
   }
   componentWillUnmount() {
     // clearInterval(this.timer)
     //Todo:Alway write clean-Up this is important and read about more
     //Todo:Remember This point So you know react is a single page application so at the end of the day react has follow single code so whenever you put timer inside then  this timer never end till application is close so this timer give slowDown our application performance So alway ways remember*** clearInterval every time with using ComponentWillUnmount unmounting face
-    console.log('Parent -ComponentWillUnmount');
-    console.log('cleaned up');
+    // console.log('Parent -ComponentWillUnmount');
+    // console.log('cleaned up');
   }
   render() {
-    console.log('Parent -Render...');
+    // console.log('Parent -Render...');
     const { count1, count2 } = this.state; //we can destructure our state like this
     return (
       <div>
