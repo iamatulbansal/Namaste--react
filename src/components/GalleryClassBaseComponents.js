@@ -1,18 +1,25 @@
 import React from 'react';
-
+import GalleryClassBaseChildComponent from './GalleryClassBaseChildComponent';
 class GalleryClassBaseComponents extends React.Component {
   constructor(props) {
     //Every Render our contractor function will called
     super(props); //this Supper method inherit form React.Components  Read more about OPP concept's For better knows
+    //Todo:https://www.w3schools.com/jsref/jsref_class_super.asp read more about super class
 
     //We Will Create State like this
     this.state = {
       count1: 0,
       count2: 2,
     };
+    console.log('Parent -Constructor...');
+  }
+  componentDidMount() {
+    //HERE IS BEST PLACE FOR API CALL
+    console.log('Parent -ComponentDidMount...');
   }
 
   render() {
+    console.log('Parent -Render...');
     const { count1, count2 } = this.state; //we can destructure our state like this
     return (
       <div>
@@ -30,8 +37,18 @@ class GalleryClassBaseComponents extends React.Component {
         >
           CountUpdate
         </button>
+        <GalleryClassBaseChildComponent />
       </div>
     );
   }
 }
 export default GalleryClassBaseComponents;
+/* 
+Parent -Constructor...
+Parent -Render...
+Child -constructor
+Child -Render
+Child -ComponentDidMount
+Parent -ComponentDidMount...
+your class base components lifecycle call like this 
+*/
