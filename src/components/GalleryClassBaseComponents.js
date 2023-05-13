@@ -5,8 +5,8 @@ import GalleryClassBaseChildComponent from './GalleryClassBaseChildComponent';
 const GitProfile = ({ ...props }) => {
   const { name, bio, avatar_url, location, html_url, login } = props || {};
 
-  //Earlier return 
-  if (!Object.keys(props).length) return <h1>GitHub Data  Not Found</h1>
+  //Earlier return
+  if (!Object.keys(props).length) return <h1>GitHub Data Not Found</h1>;
   return (
     <div className="git-profile">
       <h1>{bio}</h1>
@@ -53,14 +53,16 @@ class GalleryClassBaseComponents extends React.Component {
 
     //HERE IS BEST PLACE FOR API CALL
     try {
-      const response = await fetch('https://api.github.com/users/iamatulbansal');
+      const response = await fetch(
+        'https://api.github.com/users/iamatulbansal'
+      );
       const json = await response.json();
       console.log(json);
       this.setState({
         userInfo: json,
       });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
 
     console.log('Parent -ComponentDidMount...');
@@ -68,24 +70,25 @@ class GalleryClassBaseComponents extends React.Component {
   }
   componentDidUpdate(prevProps, prevState) {
     //THIS IS LIKE DEPENDENCY ARRAY BUT DON'T COMPARE WITH USEEFFECT GOT IT
-    if (this.state.count1 === prevState.count1 || this.state.count1 === prevState.count1) {
+    if (
+      this.state.count1 === prevState.count1 ||
+      this.state.count1 === prevState.count1
+    ) {
       // console.warn("count-Change")
       //Code here
     }
     if (this.state.userInfo === prevState.userInfo) {
-      console.warn("count-Change")
+      console.warn('count-Change');
       //Code Here
-      
     }
     console.log('Parent -ComponentDidUpdate...');
   }
   componentWillUnmount() {
-
     // clearInterval(this.timer)
     //Todo:Alway write clean-Up this is important and read about more
     //Todo:Remember This point So you know react is a single page application so at the end of the day react has follow single code so whenever you put timer inside then  this timer never end till application is close so this timer give slowDown our application performance So alway ways remember*** clearInterval every time with using ComponentWillUnmount unmounting face
     console.log('Parent -ComponentWillUnmount');
-    console.log("cleaned up");
+    console.log('cleaned up');
   }
   render() {
     console.log('Parent -Render...');
@@ -96,7 +99,7 @@ class GalleryClassBaseComponents extends React.Component {
         <h2>Name:"Atul Bansal"</h2>
         <h2>Count1:{count1}</h2>
         <h2>Count2:{count2}</h2>
-        <button //And this time to click this btn then your
+        <button //And this time to click this btn then called your
           /***
              parent render
              first-child render
