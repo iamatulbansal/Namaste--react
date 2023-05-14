@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { RESTAURANTS_API_LINK, restaurantList } from '../constant';
 import RestaurantCard from './RestaurantCard';
 import Simmer from '../Simmer';
+import { filterData } from '../utils/helpers';
+import IsOnline from './IsOnline';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -10,15 +12,6 @@ export const SimmerReusableUpdate = () => {
   ));
 };
 
-//*SEARCH FILTER LOGIC
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) => {
-    return restaurant?.data?.name
-      ?.toLowerCase()
-      ?.includes(searchText.toLowerCase());
-  });
-  return filterData;
-}
 
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
@@ -50,6 +43,10 @@ const Body = () => {
       console.log('API-ERROR=>', error);
     }
   }
+
+  const [isOnline, setIsOnline] = useState(true)
+  //earlier return 
+  if (!isOnline) return <IsOnline />
 
   if (!allRestaurants) return null;
 
