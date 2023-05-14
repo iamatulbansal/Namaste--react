@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 // import { LOGO_LINK } from "../constant";
 import { Link } from 'react-router-dom';
-import useOnline from '../hooks/useOnline';
+// import useOnline from '../hooks/useOnline';
+import { useOnline } from 'react-power-up';
 import logo from '../assets/img/logo.jpg';
 function loginUser() {
   return false;
@@ -45,7 +46,7 @@ const Header = () => {
       </ul>
       <div className="user-login-items">
         {/* i learn Js Expression & statement */}
-        {isOnline ? "🔴Offline" : "🟢Online"}
+        {isOnline ? "🟢Online" : "🔴Offline"}
         {isLoggedIn ? (
           <button
             className="logout"

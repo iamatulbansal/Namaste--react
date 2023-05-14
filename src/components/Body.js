@@ -5,7 +5,8 @@ import RestaurantCard from './RestaurantCard';
 import Simmer from '../Simmer';
 import { filterData } from '../utils/helpers';
 import IsOnline from './IsOnline';
-import useOnline from '../hooks/useOnline';
+// import useOnline from '../hooks/useOnline';
+import { useOnline } from 'react-power-up';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -50,7 +51,7 @@ const Body = () => {
 
 
   //earlier return 
-  if (isOnline) return <IsOnline />
+  if (!isOnline) return <IsOnline />
 
   if (!allRestaurants) return null;
 
