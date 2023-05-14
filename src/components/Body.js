@@ -5,6 +5,7 @@ import RestaurantCard from './RestaurantCard';
 import Simmer from '../Simmer';
 import { filterData } from '../utils/helpers';
 import IsOnline from './IsOnline';
+import useOnline from '../hooks/useOnline';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -14,6 +15,7 @@ export const SimmerReusableUpdate = () => {
 
 
 const Body = () => {
+
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState('');
@@ -44,7 +46,9 @@ const Body = () => {
     }
   }
 
-  const [isOnline, setIsOnline] = useState(true)
+  // const [isOnline, setIsOnline] = useState(true)//create a useOnline custom hooks
+  const isOnline = useOnline()
+  console.log(isOnline)
   //earlier return 
   if (!isOnline) return <IsOnline />
 
