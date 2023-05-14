@@ -15,7 +15,7 @@ export const SimmerReusableUpdate = () => {
 
 
 const Body = () => {
-
+  const isOnline = useOnline()
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState('');
@@ -47,10 +47,10 @@ const Body = () => {
   }
 
   // const [isOnline, setIsOnline] = useState(true)//create a useOnline custom hooks
-  const isOnline = useOnline()
-  console.log(isOnline)
+
+
   //earlier return 
-  if (!isOnline) return <IsOnline />
+  if (isOnline) return <IsOnline />
 
   if (!allRestaurants) return null;
 
