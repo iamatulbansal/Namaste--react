@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import useOnline from '../hooks/useOnline';
 import { useOnline } from 'react-power-up';
 import logo from '../assets/img/logo.jpg';
+import { URL_PATH } from '../constant';
 function loginUser() {
   return false;
 }
@@ -31,7 +32,7 @@ const Header = () => {
           <Link to="/">Home</Link>
         </li>
         <li className="nav-list">
-          <Link to="/about">About</Link>
+          <Link to={URL_PATH.ABOUT}>About</Link>
         </li>
         <li className="nav-list">
           <Link to="/contact">Contact-us</Link>
@@ -43,6 +44,8 @@ const Header = () => {
           <Link to="/gallery">Gallery</Link>
         </li>
         <li className="nav-list">Cart</li>
+        <Link to='/videos'><li className="nav-list">videos</li></Link>
+
       </ul>
       <div className="user-login-items">
         {/* i learn Js Expression & statement */}
