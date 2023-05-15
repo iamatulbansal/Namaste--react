@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom';
 import { RESTAURANTS_API_LINK, restaurantList } from '../constant';
 import RestaurantCard from './RestaurantCard';
 import Simmer from '../Simmer';
+import { filterData } from '../utils/helpers';
+import IsOnline from './IsOnline';
+// import useOnline from '../hooks/useOnline';
+import { useOnline } from 'react-power-up';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -10,26 +14,18 @@ export const SimmerReusableUpdate = () => {
   ));
 };
 
-//*SEARCH FILTER LOGIC
-function filterData(searchText, restaurants) {
-  const filterData = restaurants.filter((restaurant) => {
-    return restaurant?.data?.name
-      ?.toLowerCase()
-      ?.includes(searchText.toLowerCase());
-  });
-  return filterData;
-}
 
 const Body = () => {
+  const isOnline = useOnline()
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState('');
-  console.log(!allRestaurants);
+  // console.log(!allRestaurants);
 
   useEffect(() => {
     //Api Call
     getRestaurants();
-    console.log('useEffect');
+    // console.log('useEffect');
   }, []); //[] This is a Dependency array
 
   async function getRestaurants() {
@@ -50,6 +46,12 @@ const Body = () => {
       console.log('API-ERROR=>', error);
     }
   }
+
+  // const [isOnline, setIsOnline] = useState(true)//create a useOnline custom hooks
+
+
+  //earlier return 
+  if (!isOnline) return <IsOnline />
 
   if (!allRestaurants) return null;
 

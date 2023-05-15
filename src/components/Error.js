@@ -1,7 +1,8 @@
 import { useRouteError } from 'react-router-dom';
 
+
 const Error = () => {
-  const error = useRouteError(); //INVOKED-USEROUTEERROR COME FROM REACT-ROUTER-DOM TO HANDLE ALL PATH NOT MATCH ERROR OF YOUR PROJECT
+  const error = useRouteError(); //INVOKED-useRouteError COME FROM REACT-ROUTER-DOM TO HANDLE ALL PATH NOT MATCH ERROR OF YOUR PROJECT
   return (
     <div>
       <h2>Oops!</h2>

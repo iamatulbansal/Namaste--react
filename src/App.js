@@ -1,15 +1,30 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
-import Footer from './components/Footer';
-import Header from './components/Header';
-import Body from './components/Body';
-import ContactUs from './components/ContactUs';
-import About from './components/About';
-import Error from './components/Error';
-import RestaurantDetails from './components/RestaurantDetails';
-import Profile from './components/Profile';
-import GalleryClassBaseComponents from './components/GalleryClassBaseComponents';
+import { URL_PATH } from './constant';
+// import Videos from './components/videos';
+// import Footer from './components/Footer';
+// import Header from './components/Header';
+// import Body from './components/Body';
+// import ContactUs from './components/ContactUs';
+// import About from './components/About';
+// import Error from './components/Error';
+// import RestaurantDetails from './components/RestaurantDetails';
+// import Profile from './components/Profile';
+// import GalleryClassBaseComponents from './components/GalleryClassBaseComponents';
+
+const Videos = lazy(() => import('./components/videos'));
+const Footer = lazy(() => import('./components/Footer'));
+const Header = lazy(() => import('./components/Header'));
+const Body = lazy(() => import('./components/Body'));
+const ContactUs = lazy(() => import('./components/ContactUs'));
+const About = lazy(() => import('./components/About'));
+const Error = lazy(() => import('./components/Error'));
+const RestaurantDetails = lazy(() => import('./components/RestaurantDetails'));
+const Profile = lazy(() => import('./components/Profile'));
+const GalleryClassBaseComponents = lazy(() =>
+  import('./components/GalleryClassBaseComponents')
+);
 
 const AppLayout = () => {
   return (
@@ -23,41 +38,86 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: '/',
-    element: <AppLayout />,
-    errorElement: <Error />,
+    element: (
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <AppLayout />
+      </Suspense>
+    ),
+    errorElement: (
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Error />
+      </Suspense>
+    ),
+
     children: [
       //NEED OUTLAT-components-from react router dom TO ACCESS OUR ALL NESTED CHILDREN
       {
         path: '/',
-        element: <Body />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Body />
+          </Suspense>
+        ),
       },
       {
-        path: '/about',
-        element: <About />,
+        path: URL_PATH.ABOUT,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <About />
+          </Suspense>
+        ),
         children: [
           {
             //if you pass your path starting / then this is give error and this is attach to root path so every time put path without '/' Got it.we pass relative/nested path using like this "profile" and access child route using Outlet component we always put Outlet inside your parent components
             path: 'profile',
-            element: <Profile />,
+            element: (
+              <Suspense fallback={<h1>Loading...</h1>}>
+                <Profile />
+              </Suspense>
+            ),
           },
         ],
       },
 
       {
         path: '/contact',
-        element: <ContactUs />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <ContactUs />
+          </Suspense>
+        ),
       },
       {
         path: '/profile',
-        element: <Profile />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Profile />
+          </Suspense>
+        ),
       },
       {
         path: '/gallery',
-        element: <GalleryClassBaseComponents />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <GalleryClassBaseComponents />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/videos',
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Videos />
+          </Suspense>
+        ),
       },
       {
         path: '/restaurant/:resId',
-        element: <RestaurantDetails />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <RestaurantDetails />
+          </Suspense>
+        ),
       },
     ],
   },
@@ -65,6 +125,4 @@ const appRouter = createBrowserRouter([
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={appRouter} />);
-/***
- 
- */
+

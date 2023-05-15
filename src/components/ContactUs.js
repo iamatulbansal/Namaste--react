@@ -11,21 +11,21 @@ const ContactUs = () => {
         'https://api.github.com/users/iamatulbansal'
       );
       const json = await response.json();
-      console.log(json);
+      // console.log(json);
       if (json) {
         setUserInfo(json);
-        console.log('Timer1');
+        // console.log('Timer1');
       }
-      console.log('Timer2');
+      // console.log('Timer2');
     }, 0);
 
     return () => {
       //this is fire after componentWillUnmount
       setTimeout(timer);
-      console.log('Clean-up');
+      // console.log('Clean-up');
     };
   }, []);
-  console.log('userInfo-Render', userInfo);
+  // console.log('userInfo-Render', userInfo);
   return (
     <div>
       <h1>Contact us</h1>

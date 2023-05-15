@@ -3,9 +3,13 @@ import { useParams } from 'react-router-dom';
 import { IMG_CDN_LINK, RESTAURANTS_MENU_API_LINK } from '../constant';
 import ShimmerImg from '../assets/img/Shimmer.gif';
 
+//customHooks
+import useRestaurant from '../hooks/useRestaurant';
+
+//Components
 const MenuTableView = (props) => {
   const menusList = props.menusList ?? [];
-  console.log('menusList', menusList);
+  // console.log('menusList', menusList);
   return (
     <table style={{ width: '100%' }}>
       <tbody>
@@ -56,7 +60,7 @@ const Shimmer = () => {
     </div>
   );
 };
-
+//function logic
 function restaurantDetail(restaurantDetails) {
   const response = restaurantDetails?.data?.cards[0]?.card?.card?.info;
   return response;
@@ -69,14 +73,10 @@ function menuList(restaurantDetails) {
     response[0]?.groupedCard?.cardGroupMap?.REGULAR?.cards;
   return restaurantMenuList;
 }
+
 const RestaurantDetails = () => {
   const { resId } = useParams(); //use params for get id from url
-  const [restaurantDetails, setRestaurantDetails] = useState(null);
-  //we are fetch data from Swiggy.com api only one time render using empty dependency arrey
-  useEffect(() => {
-    //Call menu Api
-    getRestaurantMenuDetails();
-  }, []);
+  const restaurantDetails = useRestaurant(RESTAURANTS_MENU_API_LINK, resId);
 
   const restaurantInfo = restaurantDetail(restaurantDetails);
 
@@ -85,15 +85,6 @@ const RestaurantDetails = () => {
     ?.filter((menus) => menus.card.card.itemCards)[0]
     ?.card?.card?.itemCards.map((menu) => menu?.card?.info);
 
-  async function getRestaurantMenuDetails() {
-    try {
-      const response = await fetch(RESTAURANTS_MENU_API_LINK + resId); //for burger king we will change id dynamically
-      const data = await response.json();
-      setRestaurantDetails(data);
-    } catch (error) {
-      console.log('error', error);
-    }
-  }
   return !restaurantInfo ? (
     <Shimmer />
   ) : (

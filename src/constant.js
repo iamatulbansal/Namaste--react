@@ -16,6 +16,11 @@ export const LOGO_LINK =
 
 //Todo:Most important Thing
 //*Note-Router root path starting from / like this to="/profile"
+export const URL_PATH = {
+  ABOUT: '/about'
+
+}
+
 //*Router parent relative path starting from ''  like this to="profile"
 
 export const restaurantList = [
