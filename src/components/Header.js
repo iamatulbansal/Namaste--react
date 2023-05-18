@@ -25,7 +25,7 @@ const Header = () => {
   const isOnline = useOnline()
   const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (
-    <div className="container">
+    <div className="flex">
       <Title />
       <ul className="nav-items">
         <li className="nav-list">
