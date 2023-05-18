@@ -57,7 +57,7 @@ const Body = () => {
 
   return (
     <>
-      <div className="search-container">
+      <div className="bg-red-100 p-4">
         <input
           type="text"
           placeholder="Search"
@@ -79,7 +79,7 @@ const Body = () => {
         <br />
         <span className="chip">{searchText}</span>
       </div>
-      <div className="body-container">
+      <div className="flex flex-wrap justify-around p-2 gap-5  ">
         {allRestaurants?.length === 0 ? (
           <SimmerReusableUpdate />
         ) : filteredRestaurants?.length === 0 ? (
@@ -91,7 +91,7 @@ const Body = () => {
               key={restaurant.data.id}
               to={`/restaurant/${restaurant.data.id}`}
             >
-              <RestaurantCard {...restaurant.data} />
+              <RestaurantCard {...restaurant.data}  />
             </Link>
           ))
         )}

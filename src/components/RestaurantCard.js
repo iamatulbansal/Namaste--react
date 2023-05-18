@@ -9,8 +9,8 @@ const RestaurantCard = (props) => {
     cloudinaryImageId,
   } = props;
   return (
-    <div className="restaurant-card">
-      <img src={IMG_CDN_LINK + cloudinaryImageId} alt="Restaurant-card-img" />
+    <div className="shadow-md bg-green-100 shadow-lg shadow-red-100 rounded-md w-60">
+      <img src={IMG_CDN_LINK + cloudinaryImageId} alt="Restaurant-card-img"  className='rounded-t-lg'/>
       <strong>{name}</strong>
       <p>{cuisines?.slice(0, 3).join(' | ')}</p>
       <p>
@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
       <p>
         <b>{lastMileTravelString}</b>
       </p>
-      <p>
+      <p className='py-2'>
         <b>{costForTwoString}</b>
       </p>
     </div>
