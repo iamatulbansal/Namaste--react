@@ -13,8 +13,8 @@ function loginUser() {
 export const Title = () => {
   return (
     <React.Fragment>
-      <a href="/" className="titleAnchorTag">
-        <img alt="LOGO" className="logo" src={logo} />
+      <a href="/" className="px-2 w-[120]">
+        <img alt="LOGO" className="" src={logo} />
       </a>
     </React.Fragment>
   );
@@ -25,34 +25,36 @@ const Header = () => {
   const isOnline = useOnline()
   const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (
-    <div className="flex">
+    <div className="flex justify-between items-center shadow-md">
       <Title />
-      <ul className="nav-items">
-        <li className="nav-list">
+      <ul className="flex justify-between gap-2 font-semibold">
+        <li className="bg-red-100 p-2  px-4  rounded-lg">
           <Link to="/">Home</Link>
         </li>
-        <li className="nav-list">
+        <li className="bg-red-100 p-2  px-4  rounded-lg">
           <Link to={URL_PATH.ABOUT}>About</Link>
         </li>
-        <li className="nav-list">
+        <li className="bg-red-100 p-2  px-4  rounded-lg">
           <Link to="/contact">Contact-us</Link>
         </li>
-        <li className="nav-list">
+        <li className="bg-red-100 p-2  px-4  rounded-lg">
           <Link to="/profile">Profile</Link>
         </li>
-        <li className="nav-list">
+        <li className="bg-red-100 p-2  px-4  rounded-lg">
           <Link to="/gallery">Gallery</Link>
         </li>
-        <li className="nav-list">Cart</li>
-        <Link to='/videos'><li className="nav-list">videos</li></Link>
+        <li className="bg-red-100 p-2  px-4  rounded-lg">Cart</li>
+        <Link to='/videos'><li className="bg-red-100 p-2  px-4  rounded-lg">videos</li></Link>
 
       </ul>
-      <div className="user-login-items">
+      <div className="flex justify-between items-center gap-2 px-20">
         {/* i learn Js Expression & statement */}
-        {isOnline ? "🟢Online" : "🔴Offline"}
-        {isLoggedIn ? (
+        <div>
+          {isOnline ? "🟢Online" : "🔴Offline"}
+        </div>
+        <div>{isLoggedIn ? (
           <button
-            className="logout"
+            className="bg-red-300 p-2  px-4  rounded-lg"
             onClick={() => {
               setIsLoggedIn(false);
             }}
@@ -61,14 +63,15 @@ const Header = () => {
           </button>
         ) : (
           <button
-            className="login"
+            className="bg-green-300 p-2  px-4  rounded-lg"
             onClick={() => {
               setIsLoggedIn(true);
             }}
           >
             Login
           </button>
-        )}
+        )}</div>
+
       </div>
     </div>
   );
