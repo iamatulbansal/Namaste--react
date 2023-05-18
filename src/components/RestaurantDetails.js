@@ -28,6 +28,7 @@ const MenuTableView = (props) => {
             <tr className="menu-cart" key={menu?.id}>
               <td>{menu?.id}</td>
               <td>{menu?.name}</td>
+              <td className='items-center  rounded-full bg-red-100 flex justify-center '><button onClick={() => alert(JSON.stringify(menu))}>Add To Cart</button></td>
               <td>{menu?.price}</td>
               <td>
                 <img
@@ -88,8 +89,8 @@ const RestaurantDetails = () => {
   return !restaurantInfo ? (
     <Shimmer />
   ) : (
-    <div className="restaurant-details-container">
-      <div className="restaurant-details">
+    <div className="flex justify-start  ">
+      <div className="">
         <h1>RESTAURANT DETAILS</h1>
         <img
           src={IMG_CDN_LINK + restaurantInfo?.cloudinaryImageId}
@@ -102,7 +103,7 @@ const RestaurantDetails = () => {
         <h3>city:{restaurantInfo?.city}</h3>
         <h3>locality:{restaurantInfo?.locality}</h3>
       </div>
-      <div className="restaurant-menu">
+      <div className="w-full">
         <h1>MENU:-({menusList?.length})</h1>
         <MenuTableView menusList={menusList} />
       </div>

@@ -58,7 +58,7 @@ const Body = () => {
   return (
     <>
       <div className="bg-red-100 p-4">
-        <input
+        <input className='p-2 bg-green-50 outline-none '
           type="text"
           placeholder="Search"
           value={searchText}
@@ -66,7 +66,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
-        <button
+        <button className='bg-sky-500 hover:bg-sky-700 rounded-md p-2 text-white'
           onClick={() => {
             const searchResult = filterData(searchText, allRestaurants);
             setFilteredRestaurants(searchResult);
@@ -77,7 +77,7 @@ const Body = () => {
         </button>
         <br />
         <br />
-        <span className="chip">{searchText}</span>
+        {/* <span className="chip">{searchText}</span> */}
       </div>
       <div className="flex flex-wrap justify-around p-2 gap-5  ">
         {allRestaurants?.length === 0 ? (
@@ -91,7 +91,7 @@ const Body = () => {
               key={restaurant.data.id}
               to={`/restaurant/${restaurant.data.id}`}
             >
-              <RestaurantCard {...restaurant.data}  />
+              <RestaurantCard {...restaurant.data} />
             </Link>
           ))
         )}
