@@ -495,4 +495,42 @@ export default GalleryClassBaseComponents;
 * then this give a error and re-render every time so you don't do that got it
 * *we need function*we need react state*isOnline and is Offline status*build logic for user is on line or offline*we need return statement
    todo:if you pass your path starting / then this is give error and this is attach to root path so every time put path without '/' Got it.we pass relative/nested path using like this "profile" and access child route using Outlet component we always put Outlet inside your parent components*Note-Router root path starting from / like this to="/profile"*Router parent relative path starting from ''  like this to="profile"*NEED OUTLET-components-from react router dom TO ACCESS OUR ALL NESTED CHILDREN
-\*/
+
+
+
+* <h2>Day-10</h2>
+* Priority wise css
+* Normal Native Pure css
+* scss
+* components library's
+     -material-ui
+     -base-ui
+     -ant design
+     -chakra-ui
+*Style components
+* Tailwind css framework- you can choose accordingly you project like react,angular,nextjs,etc..
+* 
+* why use tailwind css
+* css on the go on same file
+* less bundler size
+* flexible ui customization
+* 
+* todo:Don't use CDN always use npm for tailwind 
+* 
+* install as a devdependensy using npm for react-parcel read more from documents
+* command npm i -D tailwindcss postcss 
+* .postcss only for parcel if you use webpack we don't need .postcss file
+* 
+* what is the post css?
+* ans:-postcss tall to parcel bundler to convert/compile tailwind to original css ! 
+* then execute
+* npm tailwind init for configuration file automatically generate
+*     tailwind.config.js
+* added some file path-content read more from docs
+* input 3 line inside our index.css and remove older all css code
+* 
+* configure .postcssrc file
+* now start writing your code like pure css 💥
+* 
+*    
+*/
