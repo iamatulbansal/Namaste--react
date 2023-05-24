@@ -126,3 +126,26 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(<RouterProvider router={appRouter} />);
 
+/**
+ * <h2>Day-11</h2>
+ * <h4>Data is a New Oil</h4>
+ * 
+ * What is Prop and state
+ * Prop is only readable and pass date from parent to child 
+ * and state is a local variable for store a data inside that is called state 
+ * 
+ * This is Prop-drilling:-
+ * <ParentComponent data={"name":"Atul"}/>
+ *      <ChildComponent data={"name":"Atul"}/>
+ *         <GrandChildComponent data={"name":"Atul"}/>
+ *  SO This is called Prop-Drilling
+ * what is state Lifting-up
+ * let say we have a components we pass a function to get data from child to parent components
+ *   <ParentComponent data={"name":"Atul"}/> ^
+ *      <ChildComponent data={"name":"Atul"}/>^
+ *         <GrandChildComponent data={"name":"Atul"}/>^
+ * 
+ * 
+ * 
+ * 
+  */
