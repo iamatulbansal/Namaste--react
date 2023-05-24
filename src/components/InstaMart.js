@@ -1,70 +1,36 @@
 import React, { useState } from 'react';
-
-const Profile = ({ isVisible,setIsVisible }) => {
+const Section = ({ title, description }) => {
+    const [isVisible, setIsVisible] = useState(false)
     return (
-        <>
-            <div className="border-2 border-indigo-600 m-2">
-                <div className="bg-gray-200 cursor-pointer">Profile</div>
-                {!isVisible && (
-                  <>  <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
-                        facere laborum? Quas quo, aut dolor possimus veritatis harum
-                        assumenda porro laudantium laborum, vero tempore rem pariatur libero
-                        reprehenderit provident quaerat.
-                    </p>     {isVisible ? <button className='bg-gray-300 px-2 m-2 rounded-lg' onClick={() => setIsVisible(null)}>Hide</button> : <button className='bg-green-300 px-2 m-2 rounded-lg' onClick={() => setIsVisible("team")}>Show</button>}
-                    </>
-                )}
-            </div>
-        </>
-    );
-};
-const Carrier = ({ isVisible,setIsVisible }) => {
-    return (
-        <>
-            <div className="border-2 border-indigo-600 m-2">
-                <div className="bg-gray-200 cursor-pointer">Carrier</div>
-                {!isVisible && (
-                    <> <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
-                        facere laborum? Quas quo, aut dolor possimus veritatis harum
-                        assumenda porro laudantium laborum, vero tempore rem pariatur libero
-                        reprehenderit provident quaerat.
-                    </p>
-                        {isVisible ? <button className='bg-gray-300 px-2 m-2 rounded-lg' onClick={() => setIsVisible(null)}>Hide</button> : <button className='bg-green-300 px-2 m-2 rounded-lg' onClick={() => setIsVisible("team")}>Show</button>}</>
-                )}
-            </div>
-        </>
-    );
-};
-const Team = ({ isVisible, setIsVisible }) => {
-    return (
-        <>
-            <div className="border-2 border-indigo-600 m-2">
-                <div className="bg-gray-200 cursor-pointer" >Team</div>
-                {!isVisible && (
-                    <>  <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi,
-                        facere laborum? Quas quo, aut dolor possimus veritatis harum
-                        assumenda porro laudantium laborum, vero tempore rem pariatur libero
-                        reprehenderit provident quaerat.{' '}
-                    </p>
-                        {isVisible ? <button className='bg-gray-300 px-2 m-2 rounded-lg' onClick={() => setIsVisible(null)}>Hide</button> : <button className='bg-green-300 px-2 m-2 rounded-lg' onClick={() => setIsVisible("team")}>Show</button>}
-
-                    </>
-                )}
-            </div>
-        </>
+        <div className='border-2 border-indigo-600 p-2 m-2 '>
+            <div className='text-lg'>{title}</div>
+            {isVisible?<button className='bg-gray-200 rounded-lg px-2' onClick={()=>setIsVisible(false)}>Hide</button>:
+             <button className='bg-green-200 rounded-lg px-2' onClick={()=>setIsVisible(true)}>Show</button>}
+           
+            
+            <p>{isVisible && description}</p>
+        </div>
     );
 };
 
 const InstaMart = () => {
-    const [isVisible, setIsVisible] = useState("")
+    const [isVisible, setIsVisible] = useState('');
 
     return (
         <div className="p-2 m-2">
-            <Profile isVisible={isVisible === "profile"} setIsVisible={setIsVisible} />
-            <Carrier isVisible={isVisible === "carrier"} setIsVisible={setIsVisible} />
-            <Team isVisible={isVisible === "team"} setIsVisible={setIsVisible} />
+            <h1 className="text-3xl p-2 m-2 font-bold">Instamart Page</h1>
+            <Section
+                title="About instaMart"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur aut sapiente eos voluptate doloremque, laborum voluptates aliquid quasi pariatur vitae! Quam voluptatum eveniet tempore eum blanditiis culpa iste eos."
+            />
+            <Section
+                title="Team instaMart"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur aut sapiente eos voluptate doloremque, laborum voluptates aliquid quasi pariatur vitae! Quam voluptatum eveniet tempore eum blanditiis culpa iste eos."
+            />
+            <Section
+                title="Careers instaMart"
+                description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur aut sapiente eos voluptate doloremque, laborum voluptates aliquid quasi pariatur vitae! Quam voluptatum eveniet tempore eum blanditiis culpa iste eos."
+            />
         </div>
     );
 };
