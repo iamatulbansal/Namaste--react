@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
-const Section = ({ isVisible, setIsVisible, title, description }) => {
+const Section = ({ isVisible, setIsVisible, setSectionIsVisible, title, description }) => {
     return (
         <div className='border-2 border-indigo-600 p-2 m-2 '>
             <div className='text-lg'>{title}</div>
-            {isVisible ? <button className='bg-gray-200 rounded-lg px-2' onClick={() => setIsVisible()}>Hide</button> :
+            {isVisible ? <button className='bg-gray-200 rounded-lg px-2' onClick={() => {
+
+                setSectionIsVisible(null)
+
+            }}>Hide</button> :
                 <button className='bg-green-200 rounded-lg px-2' onClick={() => setIsVisible()}>Show</button>}
             <p>{isVisible && description}</p>
         </div>
@@ -11,13 +15,7 @@ const Section = ({ isVisible, setIsVisible, title, description }) => {
 };
 
 const InstaMart = () => {
-    const [sectionConfig, setSectionConfig] = useState({
-        About: false,
-        Team: true,
-        Careers: false
-
-
-    })
+    const [sectionIsVisible, setSectionIsVisible] = useState("about")
 
     return (
         <div className="p-2 m-2">
@@ -26,43 +24,25 @@ const InstaMart = () => {
                 title="About instaMart"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur aut sapiente eos voluptate doloremque, laborum voluptates aliquid quasi pariatur vitae! Quam voluptatum eveniet tempore eum blanditiis culpa iste eos."
 
-                isVisible={sectionConfig.About}
-                setIsVisible={() => setSectionConfig({
-                    About: true,
-                    Team: false,
-                    Careers: false
-
-
-                })}
+                isVisible={sectionIsVisible === "about"}
+                setIsVisible={() => setSectionIsVisible("about")}
+                setSectionIsVisible={setSectionIsVisible}
 
             />
             <Section
                 title="Team instaMart"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur aut sapiente eos voluptate doloremque, laborum voluptates aliquid quasi pariatur vitae! Quam voluptatum eveniet tempore eum blanditiis culpa iste eos."
-                isVisible={sectionConfig.Team}
-                setIsVisible={() => setSectionConfig({
-                    About: false,
-                    Team: true,
-                    Careers: false
-                    
-
-
-                })}
-
+                isVisible={sectionIsVisible === "team"}
+                setIsVisible={() => setSectionIsVisible("team")}
+                setSectionIsVisible={setSectionIsVisible}
             />
             <Section
                 title="Careers instaMart"
                 description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur aut sapiente eos voluptate doloremque, laborum voluptates aliquid quasi pariatur vitae! Quam voluptatum eveniet tempore eum blanditiis culpa iste eos."
 
-                isVisible={sectionConfig.Careers}
-                setIsVisible={() => setSectionConfig({
-                    About: false,
-                    Team: false,
-                    Careers: true
-
-
-                })}
-
+                isVisible={sectionIsVisible === "careers"}
+                setIsVisible={() => setSectionIsVisible("careers")}
+                setSectionIsVisible={setSectionIsVisible}
             />
         </div>
     );
