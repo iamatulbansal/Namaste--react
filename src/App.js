@@ -13,7 +13,8 @@ import { URL_PATH } from './constant';
 // import Profile from './components/Profile';
 // import GalleryClassBaseComponents from './components/GalleryClassBaseComponents';
 
-const Videos = lazy(() => import('./components/videos'));
+const InstaMart = lazy(() => import('./components/InstaMart'));
+const Videos = lazy(() => import('./components/Videos'));
 const Footer = lazy(() => import('./components/Footer'));
 const Header = lazy(() => import('./components/Header'));
 const Body = lazy(() => import('./components/Body'));
@@ -108,6 +109,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
             <Videos />
+          </Suspense>
+        ),
+      },
+      {
+        path: '/instamart',
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <InstaMart />
           </Suspense>
         ),
       },

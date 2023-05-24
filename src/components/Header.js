@@ -43,7 +43,7 @@ const Header = () => {
         <li className="bg-red-100 p-2  px-4  rounded-lg">
           <Link to="/gallery">Gallery</Link>
         </li>
-        <li className="bg-red-100 p-2  px-4  rounded-lg">Cart</li>
+        <Link to="/instamart">  <li className="bg-red-100 p-2  px-4  rounded-lg">InstaMart</li></Link>
         <Link to='/videos'><li className="bg-red-100 p-2  px-4  rounded-lg">videos</li></Link>
 
       </ul>
