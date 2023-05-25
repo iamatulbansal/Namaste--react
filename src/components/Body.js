@@ -65,7 +65,7 @@ const Body = () => {
 
   return (
     <>
-      <div className="bg-red-100 p-4">
+      <div className="bg-red-100 p-4 dark:bg-gray-700">
         <input className='p-2 bg-green-50 outline-none '
           type="text"
           placeholder="Search"
@@ -74,7 +74,7 @@ const Body = () => {
             setSearchText(e.target.value);
           }}
         />
-        <button className='bg-sky-500 hover:bg-sky-700 rounded-md p-2 text-white'
+        <button className='bg-sky-500 hover:bg-sky-700 rounded-md p-2 dark:text-white'
           onClick={() => {
             const searchResult = filterData(searchText, allRestaurants);
             setFilteredRestaurants(searchResult);
@@ -98,7 +98,7 @@ const Body = () => {
             email: e.target.value
           }
           )} />
-        <span>{user.name}</span>
+        <span className='dark:text-white'>{user.name}</span>
 
         <br />
         <br />
@@ -107,12 +107,12 @@ const Body = () => {
 
 
 
-      <div className="flex flex-wrap justify-around p-2 gap-5  ">
+      <div className="flex flex-wrap justify-around p-2 gap-5 dark:bg-gray-800 ">
         {allRestaurants?.length === 0 ? (
           <SimmerReusableUpdate />
         ) : filteredRestaurants?.length === 0 ? (
           // <SimmerReusableUpdate />
-          <p>We Don't Have any Search match restaurant</p>
+          <p className='dark:text-white'>We Don't Have any Search match restaurant</p>
         ) : (
           filteredRestaurants.map((restaurant) => (
             <Link

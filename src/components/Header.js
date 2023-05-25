@@ -28,7 +28,7 @@ const Header = () => {
   console.log(user)
   const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (
-    <div className="flex justify-between items-center shadow-md">
+    <div className="flex   bg-white dark:bg-gray-800 justify-between items-center shadow-md">
       <Title />
       <ul className="flex justify-between gap-2 font-semibold">
         <li className="bg-red-100 p-2  px-4  rounded-lg">
@@ -52,8 +52,8 @@ const Header = () => {
       </ul>
       <div className="flex justify-between items-center gap-2 px-20">
         {/* i learn Js Expression & statement */}
-        <div>{user.user.name}</div>
-        <div>
+        <div className='dark:text-white'>{user.user.name}</div>
+        <div className='dark:text-white'>
           {isOnline ? "🟢Online" : "🔴Offline"}
         </div>
         <div>{isLoggedIn ? (
