@@ -6,6 +6,7 @@ import { useOnline } from 'react-power-up';
 import logo from '../assets/img/logo.jpg';
 import { URL_PATH } from '../constant';
 import UserContext from '../userContext';
+import { useSelector } from "react-redux"
 function loginUser() {
   return false;
 }
@@ -25,7 +26,8 @@ export const Title = () => {
 const Header = () => {
   const isOnline = useOnline()
   const user = useContext(UserContext)
-  console.log(user)
+  const cartLength = useSelector(state => state.cart.length)
+
   const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (
     <div className="flex   bg-white dark:bg-gray-800 justify-between items-center shadow-md">
@@ -52,6 +54,7 @@ const Header = () => {
       </ul>
       <div className="flex justify-between items-center gap-2 px-20">
         {/* i learn Js Expression & statement */}
+        <Link to='/cart'><button className='font-bold bg-red-700 text-white p-2 rounded-xl'>Cart<sup className='text-xl mx-2'>{cartLength || "0"}</sup></button></Link>
         <div className='dark:text-white'>{user.user.name}</div>
         <div className='dark:text-white'>
           {isOnline ? "🟢Online" : "🔴Offline"}

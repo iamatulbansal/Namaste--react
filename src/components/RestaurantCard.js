@@ -4,7 +4,7 @@ import UserContext from '../userContext';
 import { IMG_CDN_LINK } from '../constant';
 
 const RestaurantCard = (props) => {
-  const {user} = React.useContext(UserContext)
+  const { user } = React.useContext(UserContext)
   const {
     name,
     cuisines,
@@ -32,6 +32,7 @@ const RestaurantCard = (props) => {
         <p>{user.name}</p>
         <p>{user.email}</p>
       </div>
+      
     </div>
   );
 };

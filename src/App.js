@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { URL_PATH } from './constant';
 import UserContext from './userContext';
+import { Provider } from 'react-redux'
+import store from './redux/store';
 // import Videos from './components/videos';
 // import Footer from './components/Footer';
 // import Header from './components/Header';
@@ -24,13 +26,14 @@ const About = lazy(() => import('./components/About'));
 const Error = lazy(() => import('./components/Error'));
 const RestaurantDetails = lazy(() => import('./components/RestaurantDetails'));
 const Profile = lazy(() => import('./components/Profile'));
+const CartPage = lazy(() => import('./components/CartPage'));
 const GalleryClassBaseComponents = lazy(() =>
   import('./components/GalleryClassBaseComponents')
 );
 
 const AppLayout = () => {
 
-  const [user,setUser] = useState({
+  const [user, setUser] = useState({
 
     name: "Atul Bansal",
     email: "Atul@gmail.com"
@@ -38,6 +41,7 @@ const AppLayout = () => {
   })
   return (
     <React.Fragment>
+
       <UserContext.Provider value={{
         user: user,
         setUser: setUser
@@ -134,6 +138,14 @@ const appRouter = createBrowserRouter([
         ),
       },
       {
+        path: '/cart',
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <CartPage />
+          </Suspense>
+        ),
+      },
+      {
         path: '/restaurant/:resId',
         element: (
           <Suspense fallback={<h1>Loading...</h1>}>
@@ -146,7 +158,9 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(<RouterProvider router={appRouter} />);
+root.render(<Provider store={store}>
+  <RouterProvider router={appRouter} />
+</Provider>);
 
 /**
  * 

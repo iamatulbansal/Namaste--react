@@ -2,12 +2,15 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { IMG_CDN_LINK, RESTAURANTS_MENU_API_LINK } from '../constant';
 import ShimmerImg from '../assets/img/Shimmer.gif';
+import { useDispatch } from 'react-redux';
+import { addItem } from '../redux/cartSlice'
 
 //customHooks
 import useRestaurant from '../hooks/useRestaurant';
 
 //Components
 const MenuTableView = (props) => {
+  const dispatch = useDispatch()
   const menusList = props.menusList ?? [];
   // console.log('menusList', menusList);
   return (
@@ -28,7 +31,11 @@ const MenuTableView = (props) => {
             <tr className="menu-cart" key={menu?.id}>
               <td>{menu?.id}</td>
               <td>{menu?.name}</td>
-              <td className='items-center  rounded-full bg-red-100 flex justify-center '><button onClick={() => alert(JSON.stringify(menu))}>Add To Cart</button></td>
+              <td className='items-center   flex justify-center '>
+                <button className='text-white font-bold bg-gray-500 hover:bg-green-600 rounded-lg px-2 m-2 h-auto w-100'
+                  onClick={() => dispatch(addItem(menu))}
+                >Add To Card</button>
+              </td>
               <td>{menu?.price}</td>
               <td>
                 <img
@@ -106,6 +113,7 @@ const RestaurantDetails = () => {
       <div className="w-full">
         <h1>MENU:-({menusList?.length})</h1>
         <MenuTableView menusList={menusList} />
+
       </div>
     </div>
   );
