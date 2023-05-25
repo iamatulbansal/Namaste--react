@@ -1,12 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { useOnline } from 'react-power-up';
 import { RESTAURANTS_API_LINK, restaurantList } from '../constant';
 import RestaurantCard from './RestaurantCard';
 import Simmer from '../Simmer';
 import { filterData } from '../utils/helpers';
 import IsOnline from './IsOnline';
 // import useOnline from '../hooks/useOnline';
-import { useOnline } from 'react-power-up';
+import UserContext from '../userContext';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -17,6 +18,13 @@ export const SimmerReusableUpdate = () => {
 
 const Body = () => {
   const isOnline = useOnline()
+
+  //Context Api Example
+  const { user, setUser } = useContext(UserContext)
+
+
+
+
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [searchText, setSearchText] = useState('');
@@ -75,10 +83,30 @@ const Body = () => {
         >
           Search
         </button>
+        <input className='p-2 bg-green-50 outline-none  mx-4' type='text' placeholder='username' value={user.name} onChange={(e) => setUser({
+          //This setUser come from userContext api to direct update Global state
+          ...user, //We can spread old value then  update next value this is javascript concept
+          name: e.target.value,
+
+        })} />
+        <input className='p-2 bg-green-50 outline-none  mx-4' type='text' placeholder='username' value={user.email} onChange={(e) =>
+          //This setUser come from userContext api to direct update Global state
+          // Object.assign({}, user, { email: e.target.value }) //also we can use like this this is another javascript object.assign approach
+
+          setUser({
+            ...user, //We can spread old value then  update next value this is javascript concept
+            email: e.target.value
+          }
+          )} />
+        <span>{user.name}</span>
+
         <br />
         <br />
         {/* <span className="chip">{searchText}</span> */}
       </div>
+
+
+
       <div className="flex flex-wrap justify-around p-2 gap-5  ">
         {allRestaurants?.length === 0 ? (
           <SimmerReusableUpdate />

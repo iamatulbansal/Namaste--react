@@ -1,7 +1,8 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, useContext, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { URL_PATH } from './constant';
+import UserContext from './userContext';
 // import Videos from './components/videos';
 // import Footer from './components/Footer';
 // import Header from './components/Header';
@@ -28,11 +29,23 @@ const GalleryClassBaseComponents = lazy(() =>
 );
 
 const AppLayout = () => {
+
+  const [user,setUser] = useState({
+
+    name: "Atul Bansal",
+    email: "Atul@gmail.com"
+
+  })
   return (
     <React.Fragment>
-      <Header />
-      <Outlet />
-      <Footer />
+      <UserContext.Provider value={{
+        user: user,
+        setUser: setUser
+      }}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </UserContext.Provider>
     </React.Fragment>
   );
 };

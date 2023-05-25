@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 // import { LOGO_LINK } from "../constant";
 import { Link } from 'react-router-dom';
 // import useOnline from '../hooks/useOnline';
 import { useOnline } from 'react-power-up';
 import logo from '../assets/img/logo.jpg';
 import { URL_PATH } from '../constant';
+import UserContext from '../userContext';
 function loginUser() {
   return false;
 }
@@ -23,6 +24,8 @@ export const Title = () => {
 //HEADER COMPONENTS
 const Header = () => {
   const isOnline = useOnline()
+  const user = useContext(UserContext)
+  console.log(user)
   const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (
     <div className="flex justify-between items-center shadow-md">
@@ -49,6 +52,7 @@ const Header = () => {
       </ul>
       <div className="flex justify-between items-center gap-2 px-20">
         {/* i learn Js Expression & statement */}
+        <div>{user.user.name}</div>
         <div>
           {isOnline ? "🟢Online" : "🔴Offline"}
         </div>

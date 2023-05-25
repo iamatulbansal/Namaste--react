@@ -1,4 +1,5 @@
 import React from 'react';
+import UserContext from '../userContext';
 
 class GalleryClassBaseChildComponent extends React.Component {
   constructor(props) {
@@ -17,7 +18,10 @@ class GalleryClassBaseChildComponent extends React.Component {
     return (
       <div>
         <h2>{this.props.name}-Child component</h2>
-        <h2></h2>
+        <h2>Context APi</h2>
+        <UserContext.Consumer>
+          {(value) => <h1 className='text-red-500 font-bold'>{value.user.name} <span className='text-slate-500'> {"<<"}This name Data Come From userContext in class base components  </span></h1>}
+        </UserContext.Consumer>
       </div>
     );
   }
