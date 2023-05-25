@@ -533,4 +533,38 @@ export default GalleryClassBaseComponents;
 * now start writing your code like pure css 💥
 * 
 *    
+*  * <h2>Day-11</h2>
+* <h4>Data is a New Oil</h4>
+* 
+* What is Prop and state
+* Prop is only readable and pass date from parent to child 
+* and state is a local variable for store a data inside that is called state 
+* 
+* This is Prop-drilling:-
+* <ParentComponent data={"name":"Atul"}/>
+*      <ChildComponent data={"name":"Atul"}/>
+*         <GrandChildComponent data={"name":"Atul"}/>
+*  SO This is called Prop-Drilling
+* what is state Lifting-up
+* let say we have a components we pass a function to get data from child to parent components
+*   <ParentComponent data={"name":"Atul"}/> ^
+*      <ChildComponent data={"name":"Atul"}/>^
+*         <GrandChildComponent data={"name":"Atul"}/>^
+* 
+*  what is Context API and how we can use it read about this  
+* This is a use for centralize store in our app they solve the props drilling problem we can use for authorization and etc and what do you want you archived all think using context api and already React-router-dom is use context.provider that sit
+* 
+* createContext -we can create multiple global context using createContext import from reactcore library 
+* useContext- reading data using hook in functional components
+* provider-send data 
+* consumer-for reading data  
+*    
+*    
+*    
+*    
+*    
+*    
+*    
+*    
+*    
 */
