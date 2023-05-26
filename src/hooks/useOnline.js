@@ -23,7 +23,7 @@ const useOnline = () => {
         };
     }, []);
     //pass here ! this operator 
-    return !Boolean(isOnline);
+    return Boolean(isOnline);
 };
 export default useOnline;
 
