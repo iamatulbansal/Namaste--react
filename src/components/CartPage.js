@@ -1,14 +1,22 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { clearItems } from '../redux/cartSlice'
+import { clearItems,removeItem } from '../redux/cartSlice'
 import { IMG_CDN_LINK } from '../constant'
+import deleteIcon from '../assets/img/deleteIcon.png'
 
 const Cart = ({ ...menuItem }) => {
+    const dispatch = useDispatch()
     return <div className='cursor-pointer hover:w-55 m-2 font-bold bg-green-100 shadow-lg shadow-black-100 rounded-lg w-60 p-2'>
         <img className='w-100 h-auto ' alt='' src={IMG_CDN_LINK + menuItem?.imageId} />
         <p>Name:-{menuItem?.category}</p>
         <p>price:-{menuItem?.price}</p>
-        <p>Subname:-{menuItem?.name}</p>
+        <div className='flex justify-between items-center '>
+            <p>Subname:-{menuItem?.name}</p>
+            <img alt='' src={deleteIcon} className='w-8 float-right' onClick={() => {
+                dispatch(removeItem(menuItem))
+            }} />
+        </div>
+
     </div>
 }
 const CartPage = () => {
