@@ -561,6 +561,15 @@ export default GalleryClassBaseComponents;
 *    
 *    
 *    
+* <h2>Day-12</h2>
+* let's build store 
+* we are used react-redux and @redux/toolkit
+* configureStore import from RTK (@redux/toolkit) 
+* first we will create store then connect to store using provider come from react-redux thenwe will create slices createSlice import from rtk
+* then export actions and reducer then put our slices reducer into our  configureStore 
+* useSelector for read data from store
+* useDispatch for update and dispatch action in store 
+* learn more about middleware and redux-thunk and redux-saga
 *    
 *    
 *    
