@@ -1,12 +1,12 @@
 import { useEffect, useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { useOnline } from 'react-power-up';
+// import { useOnline } from 'react-power-up';
 import { RESTAURANTS_API_LINK, restaurantList } from '../constant';
 import RestaurantCard from './RestaurantCard';
 import Simmer from '../Simmer';
 import { filterData } from '../utils/helpers';
 import IsOnline from './IsOnline';
-// import useOnline from '../hooks/useOnline';
+import useOnline from '../hooks/useOnline'
 import UserContext from '../userContext';
 
 export const SimmerReusableUpdate = () => {
@@ -64,8 +64,8 @@ const Body = () => {
   if (!allRestaurants) return null;
 
   return (
-    <>
-      <div className="bg-red-100 p-4 dark:bg-gray-700">
+    < >
+      <div data-testid="search-div" className="bg-red-100 p-4 dark:bg-gray-700">
         <input className='p-2 bg-green-50 outline-none '
           type="text"
           placeholder="Search"
@@ -80,6 +80,7 @@ const Body = () => {
             setFilteredRestaurants(searchResult);
             setSearchText('');
           }}
+          
         >
           Search
         </button>
@@ -107,7 +108,7 @@ const Body = () => {
 
 
 
-      <div className="flex flex-wrap justify-around p-2 gap-5 dark:bg-gray-800 ">
+      <div data-testid="res-list" className="flex flex-wrap justify-around p-2 gap-5 dark:bg-gray-800 ">
         {allRestaurants?.length === 0 ? (
           <SimmerReusableUpdate />
         ) : filteredRestaurants?.length === 0 ? (
@@ -115,7 +116,7 @@ const Body = () => {
           <p className='dark:text-white'>We Don't Have any Search match restaurant</p>
         ) : (
           filteredRestaurants.map((restaurant) => (
-            <Link
+            <Link 
               key={restaurant.data.id}
               to={`/restaurant/${restaurant.data.id}`}
             >
