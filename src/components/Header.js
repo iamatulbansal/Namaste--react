@@ -26,7 +26,7 @@ export const Title = () => {
 const Header = () => {
   const isOnline = useOnline()
   const user = useContext(UserContext)
-  const cartLength = useSelector(state => state.cart.length)
+  const cartLength = useSelector(state => state.cart.items.length)
 
   const [isLoggedIn, setIsLoggedIn] = useState(loginUser());
   return (

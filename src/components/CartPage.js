@@ -1,5 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { clearItems } from '../redux/cartSlice'
 import { IMG_CDN_LINK } from '../constant'
 
 const Cart = ({ ...menuItem }) => {
@@ -11,12 +12,13 @@ const Cart = ({ ...menuItem }) => {
     </div>
 }
 const CartPage = () => {
-    const cart = useSelector(state => state.cart) //Subscribe cart data
-    console.log(cart)
+    const cart = useSelector(state => state.cart.items) //Subscribe cart data
+    const dispatch = useDispatch()
+
     if (cart.length === 0) return <h1>Don't Have any item in our card</h1>
     return (
         <div className='py-2 w-100 h-auto bg-slate-400'>
-            <h1 className='text-4xl font-bold text-gray-900  px-2'>Menu Card</h1>
+            <div className=' text-4xl font-bold text-gray-900  px-2'>Menu Card <button className='text-lg bg-red-500 rounded-lg p-2 ' onClick={() => dispatch(clearItems())}>Remove All Cart</button></div>
             <div className='flex flex-wrap justify-start items-center gap-5'>
                 {cart?.map(menuItem => <Cart key={menuItem?.id} {...menuItem} />)}
 
