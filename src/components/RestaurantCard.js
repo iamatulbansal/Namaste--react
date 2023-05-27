@@ -1,6 +1,6 @@
 
 import React from 'react';
-import UserContext from '../userContext';
+import UserContext from '../UserContext';
 import { IMG_CDN_LINK } from '../constant';
 
 const RestaurantCard = (props) => {

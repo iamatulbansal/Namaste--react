@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useContext, useState } from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { URL_PATH } from './constant';
-import UserContext from './userContext';
+import UserContext from './UserContext';
 import { Provider } from 'react-redux'
 import store from './redux/store';
 // import Videos from './components/videos';

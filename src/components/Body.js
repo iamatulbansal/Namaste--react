@@ -7,7 +7,7 @@ import Simmer from '../Simmer';
 import { filterData } from '../utils/helpers';
 import IsOnline from './IsOnline';
 import useOnline from '../hooks/useOnline'
-import UserContext from '../userContext';
+import UserContext from '../UserContext';
 
 export const SimmerReusableUpdate = () => {
   return restaurantList.map((restaurant) => (
@@ -85,13 +85,13 @@ const Body = () => {
           Search
         </button>
         <input className='p-2 bg-green-50 outline-none  mx-4' type='text' placeholder='username' value={user.name} onChange={(e) => setUser({
-          //This setUser come from userContext api to direct update Global state
+          //This setUser come from UserContext api to direct update Global state
           ...user, //We can spread old value then  update next value this is javascript concept
           name: e.target.value,
 
         })} />
         <input className='p-2 bg-green-50 outline-none  mx-4' type='text' placeholder='username' value={user.email} onChange={(e) =>
-          //This setUser come from userContext api to direct update Global state
+          //This setUser come from UserContext api to direct update Global state
           // Object.assign({}, user, { email: e.target.value }) //also we can use like this this is another javascript object.assign approach
 
           setUser({
