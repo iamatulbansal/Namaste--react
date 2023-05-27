@@ -163,15 +163,5 @@ root.render(<Provider store={store}>
 </Provider>);
 
 /**
-  * <h2>Day-13 Time for test project End</h2>
-  *   * Testing Done using jest with react testing library
-  *   * steps:- for testing:-
-  * install React Testing library
-  * install jest
-  * configure jest
-  * installed jest-environment-jsdom 
-  * create my first test
-  * configure babel
-  * write expect sum test
-  * gitignore coverage report 
+ 
   */

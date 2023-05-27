@@ -571,7 +571,18 @@ export default GalleryClassBaseComponents;
 * useDispatch for update and dispatch action in store 
 * learn more about middleware and redux-thunk and redux-saga
 *    
-*    
+* <h2>Day-13  project-End</h2>
+* Time for test project
+* * Testing Done using jest with react testing library
+* * steps:- for testing:-
+* install React Testing library
+* install jest
+* configure jest
+* installed jest-environment-jsdom 
+* create my first test
+* configure babel
+* write expect sum test
+* gitignore coverage report    
 *    
 *    
 *    
